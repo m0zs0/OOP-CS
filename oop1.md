@@ -85,12 +85,12 @@
 -Ekkor a `to.` -ra az `OsszegKiir()` fog látszani
 
 ### 4. kör:
-- **Az osztályok tagjainak elérési (hozzáférési) szintjei**:
-    -**private**   => csak az adott osztályon belülről érhetjük el (default)
-    -**public**    => a névtéren belül bárhonnan elérhetjük
-    -**protected** => az osztályon kívül nem elérhetők, de a gyermek(utód)osztályból igen
-    -**internal**  => a program osztályaiból lehet elérni
-    -**protected internal** => programon belülről, vagy az utódosztályából érhető el
+**Az osztályok tagjainak elérési (hozzáférési) szintjei**:
+-private   => csak az adott osztályon belülről érhetjük el (default)
+-public    => a névtéren belül bárhonnan elérhetjük
+-protected => az osztályon kívül nem elérhetők, de a gyermek(utód)osztályból igen
+-internal  => a program osztályaiból lehet elérni
+-protected internal => programon belülről, vagy az utódosztályából érhető el
 
 -példányszintű mezőt a példányszintű metódus látja (`this`: példányra hivatkozik, de `this` nélkül is jó)  `szam1`
 -osztályszintű tagot a példányszintű metódus látja (`this` esetén hiba, enélkül megy a dolog) `szam2`, `SzorzatKiir()`
