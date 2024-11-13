@@ -3,6 +3,28 @@
 - Tulajdonságok (Properties)
 - Getter és setter metódusok
 - Lambda kifejezés
+- Automatikus tulajdonság
+
+
+## Tulajdonság (Property)
+
+**A tulajdonságok (properties) fontos szerepet játszanak az objektumorientált programozásban. **
+- Encapsulation: Lehetővé teszik az adatok elrejtését és védelmét, szabályozott hozzáférést biztosítanak hozzájuk.
+- Validation: Segítségével érvényesítési logikát adhatsz meg az adatok beállításakor vagy lekérdezésekor.
+- Readability: Használatuk növeli a kód olvashatóságát és karbantarthatóságát. 
+- Flexibility: A tulajdonságok lehetővé teszik a getter és setter metódusok testreszabását
+
+## getter és setter
+**A privát osztálymezők (pl _rendszam) elérését szabályozhatjuk vele**
+- get lekérdezi az értéket
+- set beállítja az értéket. Itt a rossz értékek lekezelése is megtörténhet!
+
+
+## lambda operátor
+A => operátor (lambda kifejezés) a getter és setter metódusokban csak akkor használható, ha a művelet egy egyszerű értékadás vagy egy egyszerű kifejezés kiértékelése. Ha a getter vagy setter metódusban összetettebb logikát kell megvalósítani, akkor hagyományos metódusokat kell használni.
+
+## Automatikus tulajdonság
+Az automatikus tulajdonságok (auto-implemented properties) azok, amelyek automatikusan létrehoznak egy háttérmezőt a tulajdonság számára.Ez leegyszerűsíti a kódot, ha nincs szükséged extra logikára a getter és setter metódusokban. Tehát nincs megjelenített privát mező!
 
 <details>
 <summary>Nyiss le az Auto.cs forrásáért!</summary>
