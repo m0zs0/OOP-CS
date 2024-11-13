@@ -172,6 +172,7 @@ static void Main(string[] args)
             {
                 foreach (Allat allat in allatok)
                 {
+                    //Használjuk az override-olt ToString() -et, ki sem kell írni a ToString() függvényt mert így is az hívódik meg 
                     Console.WriteLine(allat);
                 }
             }
