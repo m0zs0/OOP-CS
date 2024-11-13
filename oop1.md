@@ -199,3 +199,5 @@ namespace OOP_1
 ```
 
 </details>
+
+forrás: https://www.youtube.com/watch?v=tMjsRF4vmw0&list=PL0-s1rSpvk00JjRXHNlEeNxpVxKiFYPGq&index=1
