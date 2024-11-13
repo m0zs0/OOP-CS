@@ -4,11 +4,10 @@
 - this.szuletesiDatum.ToString("yyyy.MM.dd")
 - Karakterkódolási hiba megoldása:
   
-            ```c#
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
-  
-            Console.InputEncoding = System.Text.Encoding.Unicode;
-            ```
+    ```c#
+    Console.OutputEncoding = System.Text.Encoding.Unicode;
+    Console.InputEncoding = System.Text.Encoding.Unicode;
+    ```
 - DateTime.Now.Year
 - d.szuletesiDatum.Year
 - Beolvasás file-ból
