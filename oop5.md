@@ -1,5 +1,6 @@
 # 5. modul Összefoglalás
 
+- Ismétlés: Érték/Referencia típusú változók; paraméterátadás
 - Osztályok
 - Osztálytagok
 - Konstruktor
@@ -104,6 +105,10 @@ class Auto
     }
 ```
 </details>
+
+https://www.youtube.com/watch?v=DDbWbiafroQ&list=PLd5MvFV1xur5yyJ-hTmuE8vb83BTyAyBi&index=3
+https://www.youtube.com/watch?v=gOqwAgeYnAQ&list=PLd5MvFV1xur5yyJ-hTmuE8vb83BTyAyBi&index=4
+https://www.youtube.com/watch?v=gO6N7osCuMI&list=PLd5MvFV1xur5yyJ-hTmuE8vb83BTyAyBi&index=5
 
 ## Elméleti kérdések
 1. Mi az objektumorientált programozás (OOP) alapelvei?
