@@ -62,11 +62,11 @@ class Auto
         }
         public int FutottKm { get => _futottKm; set => _futottKm = value; }
     }
-    ```
+```
 <details>
-<summary>Nyiss le az Auto.cs forrásáért!</summary>
+<summary>Nyiss le a Program.cs forrásáért!</summary>
 
-### `Auto.cs` példa:
+### `Program.cs` példa:
 ```c#
     class Program
     {
@@ -101,4 +101,4 @@ class Auto
             Console.ReadKey();
         }
     }
-    ```
+```
