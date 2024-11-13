@@ -56,7 +56,7 @@ internal class Allat
 
 ```
 </details>
-
+*Már az új példány létrehozásakor eltároljuk a legnehezebb állat példányt, így a LegnehezebbFajKiirasa() fgv nagyon leegyszerűsödik.*
 
 <details>
 <summary>Nyiss le a Main() forrásáért!</summary>
@@ -159,7 +159,6 @@ static void Main(string[] args)
 
 ```
 </details>
-
 
 <details>
 <summary>Nyiss le az Adatkiiras() forrásáért!</summary>
