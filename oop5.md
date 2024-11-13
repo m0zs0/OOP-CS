@@ -104,3 +104,21 @@ class Auto
     }
 ```
 </details>
+
+## Elméleti kérdések
+1. Mi az objektumorientált programozás (OOP) alapelvei?
+2. Mit jelent az enkapszuláció az OOP-ban?
+3. Mi a különbség a példány és a statikus tagok között?
+4. Hogyan definiálunk tulajdonságokat (properties) C#-ban?
+5. Mi az automatikus tulajdonság (auto-implemented property)?
+6. Hogyan működik a getter és a setter C#-ban?
+7. Mi a lambda kifejezés, és hogyan használható a getter és setter metódusokban?
+8. Hogyan lehet érvényesítési logikát hozzáadni egy tulajdonsághoz?
+9. Mi a DateTime osztály, és mire használható?
+10. Hogyan lehet létrehozni egy DateTime objektumot a jelenlegi dátummal és idővel?
+11. Hogyan lehet formázni egy DateTime objektumot különböző formátumokban?
+12. Hogyan lehet kiszámítani a két DateTime objektum közötti különbséget?
+13. Mi a különbség a privát és a nyilvános (private és public) tagok között?
+14. Hogyan lehet egy osztályban privát mezőket (fields) definiálni?
+15. Mi a konstruktor, és hogyan használható C#-ban?
+16. Hogyan lehet felüldefiniálni a ToString() metódust egy osztályban?
