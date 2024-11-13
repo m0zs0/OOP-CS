@@ -63,6 +63,7 @@ class Auto
         public int FutottKm { get => _futottKm; set => _futottKm = value; }
     }
 ```
+</details>
 <details>
 <summary>Nyiss le a Program.cs forrásáért!</summary>
 
@@ -102,3 +103,4 @@ class Auto
         }
     }
 ```
+</details>
