@@ -42,6 +42,7 @@ internal class Allat
             this.atlagosSuly = atlagosSuly;
             this.vedett = vedett;
 
+            //Már az új példány létrehozásakor eltároljuk a legnehezebb állat példányt, így a LegnehezebbFajKiirasa() fgv nagyon leegyszerűsödik.
             if (legnehezebbAllat == null || atlagosSuly > legnehezebbAllat.atlagosSuly)
             {
                 legnehezebbAllat = this;
@@ -56,7 +57,6 @@ internal class Allat
 
 ```
 </details>
-*Már az új példány létrehozásakor eltároljuk a legnehezebb állat példányt, így a LegnehezebbFajKiirasa() fgv nagyon leegyszerűsödik.*
 
 <details>
 <summary>Nyiss le a Main() forrásáért!</summary>
