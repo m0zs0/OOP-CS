@@ -1,4 +1,4 @@
-# 1. modul elméleti áttekintés - Az osztály tagjai
+# 1. modul Az osztály tagjai
 
 - Példányszintű tagok
 - Osztályszintű tagok
