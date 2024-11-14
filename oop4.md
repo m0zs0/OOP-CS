@@ -39,7 +39,7 @@ Vissza is kapjuk az "ABC-234" értéket.
 
 Ugyanígy, ha beállítani szeretnénk a példány _rendszam mezőjét, azt egy másik publikus metódussal tehetjük meg:
 ```c#
-public string SetRendszam(string rendszam){
+public void SetRendszam(string rendszam){
     this._rendszam=rendszam;
 }
 ```
