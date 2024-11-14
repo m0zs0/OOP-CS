@@ -39,12 +39,12 @@ Vissza is kapjuk az "ABC-234" értéket.
 
 Ugyanígy, ha beállítani szeretnénk a példány _rendszam mezőjét, azt egy másik publikus metódussal tehetjük meg:
 ```c#
-public void SetRendszam(string rendszam){
+public string SetRendszam(string rendszam){
     this._rendszam=rendszam;
 }
 ```
 ```c#
-auto.SetRendszam("ACB-123");
+a1.SetRendszam("ACB-123");
 ```
 
 ## Tulajdonság (Property)
@@ -79,6 +79,35 @@ Sőt, ha csak ilyen egyszerű a két metódus, akkor:
 ```c#
 public int Rendszam { get ; set; }
 ```
+
+Megjegyzés: Bonyolultabb feltétel melletti beállítás formája a következő: Pl a Gyártási Év csak 1900-Mostani év -ig legyen elfogadva:
+```c#
+public int GyartasiEv
+{
+    get { return _gyartasiEv; }
+    set {
+        if (value >= 1900 && value <= DateTime.Now.Year)
+        {
+            _gyartasiEv = value;
+        }
+        else
+        {
+            throw new ArgumentException("A gyártási év nem lehet az 1900-2024 intervallumon kívül.");
+        }
+
+    }
+}
+```
+
+Vagy egyszerűbben:
+```c#
+public int GyartasiEv
+{
+    get => _gyartasiEv;
+    set => _gyartasiEv = value >= 1900 && value <= DateTime.Now.Year ? value : throw new ArgumentException("A gyártási év nem lehet az 1900-2024 intervallumon kívül.");
+}
+```
+
 
 ## Automatikus tulajdonság
 Az automatikus tulajdonságok (auto-implemented properties) azok, amelyek automatikusan létrehoznak egy háttérmezőt a tulajdonság számára.Ez leegyszerűsíti a kódot, ha nincs szükséged extra logikára a getter és setter metódusokban. Tehát nincs megjelenített privát mező!
