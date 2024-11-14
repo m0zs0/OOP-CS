@@ -33,7 +33,14 @@
 ```
 
 ## Osztálydeklaráció
+Az objektumorientált programozás (OOP) négy alapelve a következő:
 
+- Encapsulation (Adat elrejtés): Az adatok és a hozzájuk tartozó műveletek egy egységbe (objektumba) zárása. Ez segít az adatok védelmében és a kód modularitásának növelésében.
+- Inheritance (Öröklődés): Lehetővé teszi, hogy egy új osztály (gyermek osztály) örökölje egy meglévő osztály (szülő osztály) tulajdonságait és metódusait. Ez újrafelhasználhatóvá teszi a kódot és megkönnyíti a bővítést.
+- Polymorphism (Polimorfizmus): Az a képesség, hogy különböző objektumok ugyanazt a metódust különböző módon valósítsák meg. Ez rugalmasságot biztosít a kód számára.
+- Abstraction (Absztrakció): Az adatok és a műveletek elrejtése a felhasználó elől, csak a lényeges információk megjelenítése. Ez egyszerűsíti a komplex rendszerek kezelését.
+
+Deklaráció:
   - Program.cs-ben a class Program {} mellé,
   - Külön állományba (Solution Explorer/Project hm-je/Add/Class),
 
