@@ -44,7 +44,7 @@ public void SetRendszam(string rendszam){
 }
 ```
 ```c#
-a1.SetRendszam("ACB-123");
+auto.SetRendszam("ACB-123");
 ```
 
 ## Tulajdonság (Property)
