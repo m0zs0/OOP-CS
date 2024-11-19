@@ -8,9 +8,9 @@
 - Objektumlista
 - Kivételkezelés
 
-## Érték szerinti paraméterátadás
+## 1. Érték szerinti paraméterátadás
 
-## **Érték típusok: int, bool, double,...**
+## 1.a. Érték típusok: int, bool, double,...
 
 Az alábbi DuplazR() nem működik helyesen:
 <details>
@@ -65,7 +65,7 @@ Az alábbi DuplazJ() helyesen működik:
 
 https://www.youtube.com/watch?v=DDbWbiafroQ&list=PLd5MvFV1xur5yyJ-hTmuE8vb83BTyAyBi&index=3
 
-## **Referencia típusok: String, Array, List, Class**
+## 1.b. Referencia típusok: String, Array, List, Class
 
 <details>
 <summary>Nyiss le a Program.cs forrásáért!</summary>
@@ -97,7 +97,7 @@ https://www.youtube.com/watch?v=DDbWbiafroQ&list=PLd5MvFV1xur5yyJ-hTmuE8vb83BTyA
 
 https://www.youtube.com/watch?v=gOqwAgeYnAQ&list=PLd5MvFV1xur5yyJ-hTmuE8vb83BTyAyBi&index=4
 
-## Cím szerinti paraméterátadás
+## 2. Cím szerinti paraméterátadás
 
 <details>
 <summary>Nyiss le a Program.cs forrásáért!</summary>
