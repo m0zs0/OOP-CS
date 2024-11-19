@@ -10,7 +10,7 @@
 
 ## Érték szerinti paraméterátadás
 
--**Érték típusok: int, bool, double,...**
+- **Érték típusok: int, bool, double,...**
 
 Az alábbi DuplazR() nem működik helyesen:
 <details>
