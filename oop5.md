@@ -10,7 +10,7 @@
 
 ## Érték szerinti paraméterátadás
 
-- **Érték típusok: int, bool, double,...**
+## **Érték típusok: int, bool, double,...**
 
 Az alábbi DuplazR() nem működik helyesen:
 <details>
@@ -65,7 +65,7 @@ Az alábbi DuplazJ() helyesen működik:
 
 https://www.youtube.com/watch?v=DDbWbiafroQ&list=PLd5MvFV1xur5yyJ-hTmuE8vb83BTyAyBi&index=3
 
-- **Referencia típusok: String, Array, List, Class**
+## **Referencia típusok: String, Array, List, Class**
 
 <details>
 <summary>Nyiss le a Program.cs forrásáért!</summary>
