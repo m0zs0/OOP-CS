@@ -78,7 +78,7 @@ namespace BasicCalculator
 </details>
 
 
-### Hozd létre a főprogramot**
+### Hozd létre a főprogramot
 
 -Amely bekér egy számot 
 
