@@ -185,7 +185,7 @@ namespace BasicCalculator
 
 -Solution Explorer/Solution 'BasicCalculator'/Add/New Project
 
--BasicCalculator.Tests Test xUnit `.Net 8`
+-Test xUnit `.Net 8` BasicCalculator.Tests névvel
 
 -A Dependencies / Add project References-ben add hozzá a Basic Calculatort
 
