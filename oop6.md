@@ -187,7 +187,7 @@ namespace BasicCalculator
 
 -Test xUnit `.Net 8` BasicCalculator.Tests névvel
 
--A Dependencies / Add project References-ben add hozzá a Basic Calculatort
+-A Dependencies / Add project References-ben add hozzá a BasicCalculator-t
 
 **Írj unit teszteket az összes metódushoz az xUnit keretrendszer használatával.**
 
