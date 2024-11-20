@@ -5,12 +5,19 @@ Készíts egy egyszerű számológép alkalmazást a BasicCalculator névtérben
 ## Hozz létre egy BasicCalculator névteret (értsd projektet). `.Net 8`
 ### A BasicCalculator névtérben hozz létre egy Calculator osztályt.
 **Hozd létre az alábbi osztályszintű metódusokat:**
+
 -Az Add metódus két számot adjon össze.
+
 -A Subtract metódus két számot vonjon ki egymásból.
+
 -A Multiply metódus két számot szorozzon össze.
+
 -A Divide metódus két számot osszon el egymással, és dobjon DivideByZeroException kivételt, ha a második szám nulla.
+
 -A SquareRoot metódus számítsa ki egy szám négyzetgyökét, és dobjon ArgumentException kivételt, ha a szám negatív.
+
 -A Power metódus számítsa ki az első szám hatványát a második szám alapján.
+
 
 <details>
 <summary>Nyiss le a Calculator.cs forrásáért!</summary>
@@ -72,10 +79,15 @@ namespace BasicCalculator
 
 
 ### Hozd létre a főprogramot**
+
 -Amely bekér egy számot 
+
 -Egy műveletet 
+
 -Illetve egy második számot, ha szükség van rá (pl sqrt(szam1)-nél nincs szükség rá)
+
 -Majd kiírja a végeredményt.
+
 
 <details>
 <summary>Nyiss le a Program.cs forrásáért!</summary>
@@ -170,13 +182,21 @@ namespace BasicCalculator
 
 ### Hozz létre unitteszteket:
 **Hozz létre egy külön tesztprojektet BasicCalculator.Tests névvel.**
+
 -Solution Explorer/Solution 'BasicCalculator'/Add/New Project
+
 -BasicCalculator.Tests Test xUnit `.Net 8`
+
 -A Dependencies / Add project References-ben add hozzá a Basic Calculatort
+
 **Írj unit teszteket az összes metódushoz az xUnit keretrendszer használatával.**
+
 -Biztosítsd, hogy a tesztek lefedjék a normál működést és a kivételkezelést is.
+
 **Futtasd le a teszteket**
+
 -Test Explorer / Run All Tests
+
 
 <details>
 <summary>Nyiss le a UnitTest1.cs forrásáért!</summary>
