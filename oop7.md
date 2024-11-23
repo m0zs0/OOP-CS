@@ -8,13 +8,13 @@
 
 - A Solution-on belül
 
--- Lesz egy külön projekt, ami csak a közös osztályokat tartalmazza
+  - Lesz egy külön projekt, ami csak a közös osztályokat tartalmazza
 
--- Lesz egy Console-os projekt
+  - Lesz egy Console-os projekt
 
--- Lesz egy WPF-es projekt
+  - Lesz egy WPF-es projekt
 
--- Lesz egy Test projekt
+  - Lesz egy Test projekt
 
 
 
