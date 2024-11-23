@@ -3,6 +3,11 @@
 **Működési alapvetések:**
 - Mind Console-os mind WPF-es implementációban működni kell
 - Az osztályokat ennek megfelelően alakítsuk ki
+- A Solution-on belül
+-- Lesz egy külön projekt, ami csak a közös osztályokat tartalmazza
+-- Lesz egy Console-os projekt
+-- Lesz egy WPF-es projekt
+-- Lesz egy Test projekt
 
 
 ![KPO feladat megoldása](PICTURES/OOP_2_KPO_Solution.PNG)
@@ -203,6 +208,9 @@ namespace ClassLibrary.Classes
 ```
 </details>
 
+-A konzolos projektben hozzá kell adnod a hivatkozást a ClassLibrary projektre. Ehhez kattints jobb gombbal a konzolos projekt nevére a Solution Explorer-ben, válaszd az "Add" > "Project Reference..." lehetőséget, majd válaszd ki a ClassLibrary projektet.
+-Ezután a konzolos projektben ki kell adni a `using ClassLibrary.Classes;` utasítást
+
 <details>
 <summary>Nyiss le a Program.cs forrásáért!</summary>
 ### `Program.cs` példa:
@@ -259,6 +267,8 @@ class Program
 
 ## 3. WPF projekt létrehozása:
 -Hozz létre egy új WPF Application projektet a Solutionban (WpfApp).
+-A WPF projektben is hozzá kell adnod a hivatkozást a ClassLibrary projektre. Ehhez kattints jobb gombbal a WPF projekt nevére a Solution Explorer-ben, válaszd az "Add" > "Project Reference..." lehetőséget, majd válaszd ki a ClassLibrary projektet.
+-Ezután a WPF projektben ki kell adni a `using ClassLibrary.Classes;` utasítást
 
 ![KPO feladat megoldása](PICTURES/OOP_2_KPO_WPF.PNG)
 
@@ -384,10 +394,7 @@ namespace WpfApp
 ```
 </details>
 
-## 4. Hivatkozások beállítása:
--A konzolos és a WPF projektben is hozzá kell adnod a hivatkozást a ClassLibrary projektre. Ehhez kattints jobb gombbal a konzolos vagy WPF projekt nevére a Solution Explorer-ben, válaszd az "Add" > "Project Reference..." lehetőséget, majd válaszd ki a ClassLibrary projektet.
--Ezután a konzolos és a WPF projektben is ki kell adni a `using ClassLibrary.Classes;` utasítást
-## 5. OOP_2_KPO.Tests projekt létrehozása
+## 4. OOP_2_KPO.Tests projekt létrehozása
 -Solution Explorer/Solution 'OOP_2_KPO'/Add/New Project
 -OOP_2_KPO.Tests Test xUnit `.Net 8`
 -A Dependencies / Add project References-ben add hozzá a ClassLibrary-t
