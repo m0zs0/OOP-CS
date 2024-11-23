@@ -5,7 +5,7 @@
 - Az osztályokat ennek megfelelően alakítsuk ki
 
 
-![KPO feladat megoldása](PICTURES/OOP_2_KPO_Solution.png)
+![KPO feladat megoldása](PICTURES/OOP_2_KPO_Solution.PNG)
 
 ## 1. Konzolos projekt létrehozása (.NET8):
 -Hozz létre egy új Console Application projektet a megoldásban. Solution neve: OOP_2_KPO; Projekt neve: ConsoleApp
