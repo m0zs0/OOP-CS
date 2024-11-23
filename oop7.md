@@ -14,9 +14,12 @@
 -Hozz létre egy "Classes" mappát a ClassLibrary projektben, és ide helyezd el a közös osztályokat (Player, Match).
 -Hozzuk létre a Player osztályt a Classes mappában (kattints jobb gombbal a Classes mappa nevére, és válaszd az "Add" > "Class" lehetőséget, majd gépeld be: Player)
 
+
 <details>
 <summary>Nyiss le a Player.cs forrásáért!</summary>
+
 ### `Player.cs` példa:
+
 ```c#
 using System;
 using System.Collections.Generic;
@@ -90,6 +93,7 @@ namespace ClassLibrary.Classes
 <details>
 <summary>Nyiss le a Match.cs forrásáért!</summary>
 ### `Match.cs` példa:
+
 ```c#
 using System;
 using System.Collections.Generic;
@@ -202,6 +206,7 @@ namespace ClassLibrary.Classes
 <details>
 <summary>Nyiss le a Program.cs forrásáért!</summary>
 ### `Program.cs` példa:
+
 ```c#
 using ClassLibrary.Classes;
 using System.Reflection;
@@ -260,6 +265,7 @@ class Program
 <details>
 <summary>Nyiss le a MainWindow.xaml forrásáért!</summary>
 ### `MainWindow.xaml` példa:
+
 ```c#
 <Window x:Class="WpfApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -293,6 +299,7 @@ class Program
 <details>
 <summary>Nyiss le a MainWindow.xaml.cs forrásáért!</summary>
 ### `MainWindow.xaml.cs` példa:
+
 ```c#
 using ClassLibrary.Classes;
 using System.ComponentModel;
@@ -389,6 +396,7 @@ namespace WpfApp
 <details>
 <summary>Nyiss le a PlayerTests.cs forrásáért!</summary>
 ### `PlayerTests.cs` példa:
+
 ```c#
 using ClassLibrary.Classes;
 
@@ -454,6 +462,7 @@ namespace OOP_2_KPO.Tests
 <details>
 <summary>Nyiss le a MatchTest.cs forrásáért!</summary>
 ### `MatchTest.cs` példa:
+
 ```c#
 using ClassLibrary.Classes;
 
