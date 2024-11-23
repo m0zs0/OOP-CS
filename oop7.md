@@ -1,23 +1,37 @@
 # 7. modul Kő-Papír-Olló játék megírása
 
 **Működési alapvetések:**
+
 - Mind Console-os mind WPF-es implementációban működni kell
+
 - Az osztályokat ennek megfelelően alakítsuk ki
+
 - A Solution-on belül
+
 -- Lesz egy külön projekt, ami csak a közös osztályokat tartalmazza
+
 -- Lesz egy Console-os projekt
+
 -- Lesz egy WPF-es projekt
+
 -- Lesz egy Test projekt
+
 
 
 ![KPO feladat megoldása](PICTURES/OOP_2_KPO_Solution.PNG)
 
 ## 1. Konzolos projekt létrehozása (.NET8):
+
 -Hozz létre egy új Console Application projektet a megoldásban. Solution neve: OOP_2_KPO; Projekt neve: ConsoleApp
+
 ## 2. Class Library projekt létrehozása:
+
 -A Solution Explorer-ben kattints jobb gombbal a Solution nevére, és válaszd az "Add" > "New Project..." > "Class Library" projekt típust, és nevezd el "ClassLibrary"-nek.
+
 -Hozz létre egy "Classes" mappát a ClassLibrary projektben, és ide helyezd el a közös osztályokat (Player, Match).
+
 -Hozzuk létre a Player osztályt a Classes mappában (kattints jobb gombbal a Classes mappa nevére, és válaszd az "Add" > "Class" lehetőséget, majd gépeld be: Player)
+
 
 
 <details>
@@ -209,6 +223,7 @@ namespace ClassLibrary.Classes
 </details>
 
 -A konzolos projektben hozzá kell adnod a hivatkozást a ClassLibrary projektre. Ehhez kattints jobb gombbal a konzolos projekt nevére a Solution Explorer-ben, válaszd az "Add" > "Project Reference..." lehetőséget, majd válaszd ki a ClassLibrary projektet.
+
 -Ezután a konzolos projektben ki kell adni a `using ClassLibrary.Classes;` utasítást
 
 <details>
@@ -266,8 +281,11 @@ class Program
 </details>
 
 ## 3. WPF projekt létrehozása:
+
 -Hozz létre egy új WPF Application projektet a Solutionban (WpfApp).
+
 -A WPF projektben is hozzá kell adnod a hivatkozást a ClassLibrary projektre. Ehhez kattints jobb gombbal a WPF projekt nevére a Solution Explorer-ben, válaszd az "Add" > "Project Reference..." lehetőséget, majd válaszd ki a ClassLibrary projektet.
+
 -Ezután a WPF projektben ki kell adni a `using ClassLibrary.Classes;` utasítást
 
 ![KPO feladat megoldása](PICTURES/OOP_2_KPO_WPF.PNG)
@@ -395,10 +413,15 @@ namespace WpfApp
 </details>
 
 ## 4. OOP_2_KPO.Tests projekt létrehozása
+
 -Solution Explorer/Solution 'OOP_2_KPO'/Add/New Project
+
 -OOP_2_KPO.Tests Test xUnit `.Net 8`
+
 -A Dependencies / Add project References-ben add hozzá a ClassLibrary-t
+
 -Hozd létre a tesztelő osztályokat (PlayerTests.cs, MatchTest.cs), ehhez kattints jobb gombbal a OOP_2_KPO.Tests-re > "Add" > "Class" lehetőségre. (Az alapértelmezett osztályt is át tudod nevezni!)
+
 
 <details>
 <summary>Nyiss le a PlayerTests.cs forrásáért!</summary>
