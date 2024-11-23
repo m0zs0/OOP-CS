@@ -1,4 +1,4 @@
-# 7. modul Kő-Papír-Olló játék megírása
+# 20. modul Kő-Papír-Olló játék megírása
 
 **Működési alapvetések:**
 
