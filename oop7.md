@@ -255,6 +255,8 @@ class Program
 ## 3. WPF projekt létrehozása:
 -Hozz létre egy új WPF Application projektet a Solutionban (WpfApp).
 
+![KPO feladat megoldása](PICTURES/OOP_2_KPO_WPF.PNG)
+
 <details>
 <summary>Nyiss le a MainWindow.xaml forrásáért!</summary>
 ### `MainWindow.xaml` példa:
