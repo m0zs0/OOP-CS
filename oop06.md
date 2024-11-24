@@ -46,7 +46,9 @@ IEnumerable<IGrouping<string, Auto>> autokMarkaSzerint = a.GroupBy(auto => auto.
 foreach (IGrouping<string, Auto> csoport in autokMarkaSzerint){
     Console.WriteLine($"{csoport.Key}: {csoport.Count()} db");
     //itt akár foreach-el végigiteráléva ki is írathatók...
-
+    /*foreach (Auto auto in csoport){
+        Console.WriteLine($"\t{auto}");
+    }*/
 }
 ```
 vagy
