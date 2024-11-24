@@ -14,11 +14,11 @@ List<Auto> a = ...
 
 -Auto legidosebbAuto = a.OrderBy(auto => auto.Evjarat).FirstOrDefault();
 
-  Auto legidosebbAuto = a.MinBy(auto => auto.Evjarat);
+  -Auto legidosebbAuto = a.MinBy(auto => auto.Evjarat);
   
 -Auto legtobbetFutottAuto = a.OrderByDescending(auto => auto.FutottKm).FirstOrDefault();
   
-  Auto legtobbetFutottAuto = a.MaxBy(auto => auto.FutottKm);
+  -Auto legtobbetFutottAuto = a.MaxBy(auto => auto.FutottKm);
 
 -Auto keresettAuto = a.FirstOrDefault(auto => auto.Rendszam==keresettRendszam);
 
@@ -41,13 +41,14 @@ if (megtalaltAuto == null){
 
 -Statisztika:
 
+```c#
 IEnumerable<IGrouping<string, Auto>> autokMarkaSzerint = a.GroupBy(auto => auto.Marka);
-foreach (IGrouping<string, Auto> csoport in autokMarkaSzerint)
-{
+foreach (IGrouping<string, Auto> csoport in autokMarkaSzerint){
     Console.WriteLine($"{csoport.Key}: {csoport.Count()} db");
     //itt akár foreach-el végigiteráléva ki is írathatók...
-}
 
+}
+```
 vagy
 ```c#
 Dictionary<string, List<Auto>> autokMarkaSzerint = new Dictionary<string, List<Auto>>();
