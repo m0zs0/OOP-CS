@@ -1,6 +1,8 @@
 # Gyakorló feladatsor
 
+```c#
 List<Auto> a = ...
+```
 
 -a.ForEach(x => Console.WriteLine(x));
 
