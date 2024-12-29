@@ -1,4 +1,4 @@
-# c# függvények és LINQ
+# C# függvények és LINQ
 # LINQ (Language Integrated Query)
 
 **`LINQ` egy olyan technológia, amely lehetővé teszi a különböző adatforrások (például listák, tömbök, adatbázisok) lekérdezését és manipulálását egy egységes, deklaratív szintaxissal. A LINQ lekérdezések hasonlóak az SQL lekérdezésekhez, de közvetlenül beépülnek a C# nyelvbe.**
