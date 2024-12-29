@@ -8,11 +8,12 @@ Az `anonim függvény`-ek lehetővé teszik, hogy név nélküli függvényeket 
 List<int> szamok = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 //!a var később kerül megmagyarázásra!
-var parosSzamok = szamok.Where(delegate(int n) {
+IEnumerable<int> parosSzamok = szamok.Where(delegate(int n) {
                                     return n % 2 == 0;
                                }
                                );
 ```
+A delegate(int n) { return n % 2 == 0; } kifejezés egy anonim (névtelen) függvényt hoz létre. A A Where metódus egy iterációt végez az IEnumerable<int> gyűjteményen, és minden egyes elemet egyesével vizsgál meg. Az elemeket a függvényben n-nek nevezi el, és a kifejezés logikája alapján dönti el, hogy az adott elem megfelel-e a feltételnek (n % 2 == 0: n elem osztható-e 2-vel maradék nélkül), ha igaz a kiértékelés, akkor az (n) elem bekerül az eredmény gyűjteménybe .
 
 **`Lambda kifejezés`-ek pedig rövid, névtelen függvények, amelyeket gyakran használnak a LINQ lekérdezésekben a feltételek és műveletek meghatározására. Például egy egyszerű LINQ lekérdezés, amely egy lista elemeit szűri, így nézhet ki:**
 ```c#
