@@ -56,6 +56,7 @@ ahol az IEnumerable<Auto> egy generikus interfész, amely a C# nyelvben egy olya
 A `generikus` kifejezés a programozásban olyan típusokat és metódusokat jelöl, amelyek típusparaméterekkel dolgoznak, így különböző típusokkal is használhatók anélkül, hogy újra kellene írni őket. A generikus programozás lehetővé teszi az általános és újrafelhasználható kód írását, amely különböző típusokkal működhet.
 
 **Generikus Típusok és Metódusok**
+
 Generikus Típusok: Olyan osztályok vagy struktúrák, amelyek típusparamétereket használnak. Például a List<T> egy generikus típus, ahol a T helyére bármilyen típus behelyettesíthető.
 Generikus Metódusok: Olyan metódusok, amelyek típusparamétereket használnak. Ezek a metódusok különböző típusokkal hívhatók meg anélkül, hogy újra kellene írni őket.
 
