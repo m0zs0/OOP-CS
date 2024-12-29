@@ -8,7 +8,7 @@
 - Kivételkezelés
 
 ## Autók nyilvántartása
-- Készíts egy Auto osztályt
+1. Készíts egy Auto osztályt
   - az alábbi adattagokkal: rendszam, marka, tipus, evjarat, futottKm
   - az evjarat-mezőbe csak 1900-at vagy azutánit fogadjon el
   - a ToString metódust definiáld újra úgy, hogy a példány összes mezőjét írja ki
@@ -62,17 +62,112 @@ class Auto
 }
 ```
 </details>
-- Készíts egy Beolvas metódust, amely beolvassa az autók adatait egy fájlból egy List<Auto> típusú listába.
-- Készíts egy KepernyoreKiir metódust, amely kiírja az autók listáját a konzolra.
-- Készíts egy AtlagosKm metódust, amely kiszámítja és kiírja az autók átlagos futott kilométerét.
-- Készíts egy LegidosebbAuto metódust, amely megkeresi és kiírja a legidősebb autó adatait a listából.
+2. Készíts egy Beolvas metódust, amely beolvassa az autók adatait egy fájlból egy List<Auto> típusú listába.
+<details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
 
-(- Készíts egy LegtobbetFutottAuto metódust, amely megkeresi és kiírja a legtöbbet futott autó adatait a listából.)
-- Készíts egy KeresesRendszamAlapjan metódust, amely bekér egy rendszámot a felhasználótól, és megkeresi az autót a listában. Ha megtalálja, kiírja az autó adatait.
-- Készíts egy Rendez metódust, amely rendezi az autók listáját gyártási év szerint növekvő sorrendben.
-- Készíts egy AutokListajaMarkaSzerint metódust, amely csoportosítja és kiírja az autókat márkák szerint (darabszámukat is).
+### `Beolvas` példa:
+```c#
+/// <summary>
+/// Beolvassa a fájl sorait listában Auto példányokba
+/// </summary>
+static List<Auto> Beolvas()
+{
+    List<Auto> a = new List<Auto>();
+    try
+    {
+        using (StreamReader sr = new StreamReader("autok.csv", Encoding.UTF8))
+        {
+            string sor;
+            while ((sor = sr.ReadLine()) != null)
+            {
+                string[] seged = sor.Split(',');
+                a.Add(new Auto(seged[0], seged[1], seged[2], Convert.ToInt32(seged[3]), Convert.ToInt32(seged[4])));
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Hiba: {ex.Message}");
+        Console.ReadKey();
+        Environment.Exit(1);
+    }
+    return a;
+}
+```
+</details>
+3. Készíts egy KepernyoreKiir metódust, amely kiírja az autók listáját a konzolra.
+<details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+
+### `Beolvas` példa:
+```c#
+```
+</details>
+
+4. Készíts egy AtlagosKm metódust, amely kiszámítja és kiírja az autók átlagos futott kilométerét.
+<details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+
+### `Beolvas` példa:
+```c#
+```
+</details>
+
+5. Készíts egy LegidosebbAuto metódust, amely megkeresi és kiírja a legidősebb autó adatait a listából.
+<details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+
+### `Beolvas` példa:
+```c#
+```
+</details>
+
+(6. Készíts egy LegtobbetFutottAuto metódust, amely megkeresi és kiírja a legtöbbet futott autó adatait a listából.)
+<details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+
+### `Beolvas` példa:
+```c#
+```
+</details>
+
+
+7. Készíts egy KeresesRendszamAlapjan metódust, amely bekér egy rendszámot a felhasználótól, és megkeresi az autót a listában. Ha megtalálja, kiírja az autó adatait.
+<details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+
+### `Beolvas` példa:
+```c#
+```
+</details>
+
+8. Készíts egy Rendez metódust, amely rendezi az autók listáját gyártási év szerint növekvő sorrendben.
+<details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+
+### `Beolvas` példa:
+```c#
+```
+</details>
+
+ 9. Készíts egy AutokListajaMarkaSzerint metódust, amely csoportosítja és kiírja az autókat márkák szerint (darabszámukat is).
+     <details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+
+### `Beolvas` példa:
+```c#
+```
+</details>
   
-(- Készíts egy AutokListajaEvjaratSzerint metódust, amely csoportosítja és kiírja az autókat évjárat szerint.)
+(10. Készíts egy AutokListajaEvjaratSzerint metódust, amely csoportosítja és kiírja az autókat évjárat szerint.)
+<details>
+<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+
+### `Beolvas` példa:
+```c#
+```
+</details>
 
 (- Készíts egy AutokListajaFutottKmSzerint metódust, amely csoportosítja és kiírja az autókat futott kilométer szerint.)
 
@@ -83,39 +178,22 @@ class Auto
 
 ### `Program.cs` példa:
 ```c#
-    class Program
-    {
-        static List<Auto> Beolvas()
-        {
-            List<Auto> a = new List<Auto>();
-            try
-            {
-                using(StreamReader sr = new StreamReader("autok.csv" , Encoding.UTF8))
-                {
-                    string sor;
-                    while ((sor = sr.ReadLine()) != null)
-                    {
-                        string[] seged = sor.Split(',');
-                        a.Add(new Auto(seged[0], seged[1], seged[2], Convert.ToInt32(seged[3]), Convert.ToInt32(seged[4])));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Hiba: {ex.Message}");
-                Console.ReadKey();
-                Environment.Exit(1);
-            }
-            return a;
-        }
-        static void Main(string[] args)
-        {
-            List<Auto> autok = Beolvas();
+static void Main(string[] args){
+    List<Auto> autok = Beolvas();
+    KepernyoreKiir(autok, "Rendezés előtt");
+    Rendez(autok);
+    KepernyoreKiir(autok, "Rendezés után");
+    LegidosebbAuto(autok);
+    LegtobbetFutottAuto(autok);
+    KeresesRendszamAlapjan(autok);
+    AtlagosKm(autok);
+    AutokListajaMarkaSzerint(autok);
+    AutokListajaEvjaratSzerint(autok);
 
-            Console.WriteLine("Nyomj egy billentyűt a kilépéshez");
-            Console.ReadKey();
-        }
-    }
+    Console.WriteLine("Nyomj egy billentyűt a kilépéshez");
+    Console.ReadKey();
+}    
+
 ```
 </details>
 
