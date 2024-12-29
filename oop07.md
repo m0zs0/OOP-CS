@@ -93,6 +93,8 @@ Ebben a példában a GetFirstElement metódus generikus, és bármilyen típusú
 ```c#
 IOrderedEnumerable<Auto> rendezettAutok = autok.OrderBy(auto => auto.Evjarat);
 ```
+ahol IOrderedEnumerable<Auto>: Egy rendezett gyűjtemény, amely egy rendezési művelet eredményeként jön létre, és amelyen végig lehet iterálni.
+
 `OrderByDescending`: Rendez egy gyűjteményt csökkenő sorrendben egy adott kulcs alapján.
 ```c#
 IOrderedEnumerable<Auto> forditottRendezettAutok = autok.OrderByDescending(auto => auto.Evjarat);
