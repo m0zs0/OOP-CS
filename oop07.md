@@ -4,7 +4,14 @@
 
 **`Lambda kifejezés`-ek pedig rövid, névtelen függvények, amelyeket gyakran használnak a LINQ lekérdezésekben a feltételek és műveletek meghatározására. Például egy egyszerű LINQ lekérdezés, amely egy lista elemeit szűri, így nézhet ki:**
 ```c#
-int evenNumbers = numbers.Where(n => n % 2 == 0);
+List<int> szamok = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        
+IEnumerable<int> parosSzamok = szamok.Where(n => n % 2 == 0);
+Console.WriteLine("Páros számok:");
+foreach (int szam in parosSzamok)
+{
+    Console.WriteLine(szamok);
+}
 ```
 
 A System.Linq névtérben található metódusok bármilyen `IEnumerable<T>` típusú gyűjteményen használhatók, beleértve a `List<T>` típusú gyűjteményeket is. A LINQ metódusok gyakran IEnumerable<T> típusú értéket (amely lehetővé teszi a gyűjtemény elemeinek iterálását) vagy egyetlen más típusú értéket (int, double, Auto) adnak vissza. A `List<T>` osztály metódusai közvetlenül `List<T>` típusú eredményt adnak vissza.
