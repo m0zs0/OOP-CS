@@ -3,6 +3,7 @@
 - c# accessor-ok: a getter és setter metódusok
 - Tulajdonságok (Properties)
 - Lambda operátor
+- Validációs feltétel
 - Automatikus tulajdonság
 
 
