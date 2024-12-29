@@ -157,47 +157,140 @@ static void LegidosebbAuto(List<Auto> a)
 
 (6. Készíts egy LegtobbetFutottAuto metódust, amely megkeresi és kiírja a legtöbbet futott autó adatait a listából.)
 <details>
-<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+<summary>Nyiss le a LegtobbetFutottAuto metódus forrásáért!</summary>
 
-### `Beolvas` példa:
+### `LegtobbetFutottAuto` példa:
 ```c#
+static void LegtobbetFutottAuto(List<Auto> a)
+{
+    //Auto legtobbetFutottAuto = a.MaxBy(auto => auto.FutottKm);
+    Auto legtobbetFutottAuto = a.OrderByDescending(auto => auto.FutottKm).FirstOrDefault();
+    Console.WriteLine($"\nLegtöbett futott km autó adatai: {legtobbetFutottAuto}");
+}
 ```
 </details>
 
 
 7. Készíts egy KeresesRendszamAlapjan metódust, amely bekér egy rendszámot a felhasználótól, és megkeresi az autót a listában. Ha megtalálja, kiírja az autó adatait.
 <details>
-<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+<summary>Nyiss le a KeresesRendszamAlapjan metódus forrásáért!</summary>
 
-### `Beolvas` példa:
+### `KeresesRendszamAlapjan` példa:
 ```c#
+static void KeresesRendszamAlapjan(List<Auto> a)
+{
+    Console.Write("Kérem a rendszámot: ");
+    string keresesRendszam = Console.ReadLine();
+    Auto megtalaltAuto = null;
+    foreach (Auto auto in a)
+    {
+        if (auto.Rendszam.Equals(keresesRendszam, StringComparison.OrdinalIgnoreCase))
+        {
+            megtalaltAuto = auto;
+            break;
+        }
+    }
+    if (megtalaltAuto == null)
+    {
+        Console.WriteLine("Nincs ilyen adat");
+    }
+    else
+    {
+        Console.WriteLine(megtalaltAuto);
+    }
+}
 ```
 </details>
 
 8. Készíts egy Rendez metódust, amely rendezi az autók listáját gyártási év szerint növekvő sorrendben.
 <details>
-<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+<summary>Nyiss le a Rendez metódus forrásáért!</summary>
 
-### `Beolvas` példa:
+### `Rendez` példa:
 ```c#
+static void Rendez(List<Auto> a)
+{
+    for (int i = 0; i < a.Count-1; i++)
+    {
+        for (int j = i+1; j < a.Count; j++)
+        {
+            if (a[i].Evjarat > a[j].Evjarat)
+            {
+                Auto seged = a[i];
+                a[i] = a[j];
+                a[j] = seged;
+            }
+        }
+    }
+}
 ```
 </details>
 
  9. Készíts egy AutokListajaMarkaSzerint metódust, amely csoportosítja és kiírja az autókat márkák szerint (darabszámukat is).
      <details>
-<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+<summary>Nyiss le a AutokListajaMarkaSzerint metódus forrásáért!</summary>
 
-### `Beolvas` példa:
+### `AutokListajaMarkaSzerint` példa:
 ```c#
+static void AutokListajaMarkaSzerint(List<Auto> a)
+{
+    Console.WriteLine("\nAz autók csoportosítva márka szerint: ");
+    //Csoportosítás márka szerint:
+    Dictionary<string, List<Auto>> autokMarkaSzerint = new Dictionary<string, List<Auto>>();
+    foreach (Auto auto in a)
+    {
+        if (!autokMarkaSzerint.ContainsKey(auto.Marka))
+        {
+            autokMarkaSzerint[auto.Marka] = new List<Auto>();
+        }
+        autokMarkaSzerint[auto.Marka].Add(auto);
+    }
+    //var autokMarkaSzerint = a.GroupBy(auto => auto.Marka);
+
+    //Csoportok kiírása
+    foreach (KeyValuePair<string, List<Auto>> markakCsoport in autokMarkaSzerint)
+    {
+        Console.WriteLine($"{markakCsoport.Key} ({markakCsoport.Value.Count()}db)");
+        foreach (Auto csoportbeliAuto in markakCsoport.Value)
+        {
+            Console.WriteLine($"  {csoportbeliAuto}");
+        }
+    }
+   
+    /*foreach (var markakCsoport in autokMarkaSzerint)
+    {
+        Console.WriteLine(markakCsoport.Key);
+        foreach (var csoportbeliAuto in markakCsoport)
+        {
+            Console.WriteLine($"  {csoportbeliAuto}");
+        }
+    }*/
+}
 ```
 </details>
   
 (10. Készíts egy AutokListajaEvjaratSzerint metódust, amely csoportosítja és kiírja az autókat évjárat szerint.)
 <details>
-<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+<summary>Nyiss le a AutokListajaEvjaratSzerint metódus forrásáért!</summary>
 
-### `Beolvas` példa:
+### `AutokListajaEvjaratSzerint` példa:
 ```c#
+static void AutokListajaEvjaratSzerint(List<Auto> a)
+{
+    Console.WriteLine("\nAz autók csoportosítva évjárat szerint: ");
+    //Csoportosítás márka szerint:
+    var autokEvjaratSzerint = a.GroupBy(auto => auto.Evjarat);
+
+    //Csoportok kiírása
+    foreach (var evjaratCsoport in autokEvjaratSzerint)
+    {
+        Console.WriteLine(evjaratCsoport.Key);
+        foreach (var csoportbeliAuto in evjaratCsoport)
+        {
+            Console.WriteLine($"  {csoportbeliAuto}");
+        }
+    }
+}
 ```
 </details>
 
