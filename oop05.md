@@ -1,8 +1,9 @@
-# 5. modul Ismétlés
+# 5. modul Ismétlés: Paraméterátadás
 
-- Érték típusú változók
-- Referencia típusú változók
-- Paraméterátadás
+- Érték szerinti paraméterátadás
+  - Érték típusú változók
+  - Referencia típusú változók
+- Cím szerinti paraméterátadás
 
 ## 1. Érték szerinti paraméterátadás
 
