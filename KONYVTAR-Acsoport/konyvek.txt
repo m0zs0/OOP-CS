@@ -1,0 +1,42 @@
+Egri csillagok;Gárdonyi Géza;1901;9789631188363
+A Pál utcai fiúk;Molnár Ferenc;1906;9789631188370
+Tüskevár;Fekete István;1957;9789631188387
+Az arany ember;Jókai Mór;1872;9789631188394
+A kőszívű ember fiai;Jókai Mór;1869;9789631188400
+Légy jó mindhalálig;Móricz Zsigmond;1920;9789631188417
+Abigél;Szabó Magda;1970;9789631188424
+Piedone nyomában;Bujtor István;1980;9789631188431
+A gyűrűk ura;J.R.R. Tolkien;1954;9789631188448
+Harry Potter és a bölcsek köve;J.K. Rowling;1997;9789631188455
+Harry Potter és a titkok kamrája;J.K. Rowling;1998;9789631188462
+Harry Potter és az azkabani fogoly;J.K. Rowling;1999;9789631188479
+Harry Potter és a tűz serlege;J.K. Rowling;2000;97896o1188486
+Harry Potter és a Főnix Rendje;J.K. Rowling;2003;9789631188493
+Harry Potter és a Félvér Herceg;J.K. Rowling;2005;9789631188509
+Harry Potter és a Halál ereklyéi;J.K. Rowling;2007;9789631188516
+A kis herceg;Antoine de Saint-Exupéry;1943;9789631188523
+Száz év magány;Gabriel García Márquez;1967;9789631188530
+A Mester és Margarita;Mihail Bulgakov;1967;9789631188547
+Bűn és bűnhődés;Fjodor Mihajlovics Dosztojevszkij;1866;9789631188554
+Háború és béke;Lev Tolsztoj;1869;9789631188561
+Anna Karenina;Lev Tolsztoj;1877;9789631188578
+Az öreg halász és a tenger;Ernest Hemingway;1952;9789631188585
+A nagy Gatsby;F. Scott Fitzgerald;1925;9789631188592
+1984;George Orwell;1949;9789631188608
+Állatfarm;George Orwell;1945;9789631188615
+A legyek ura;William Golding;1954;9789631188622
+Szép új világ;Aldous Huxley;1932;9789631188639
+A hobbit;J.R.R. Tolkien;1937;9789631188646
+A Da Vinci-kód;Dan Brown;2003;9789631188653
+Angyalok és démonok;Dan Brown;2000;9789631188660
+Inferno;Dan Brown;2013;9789631188677
+A szürke ötven árnyalata;E.L. James;2011;9789631188684
+A szürke ötven árnyalata - A szabadság ötven árnyalata;E.L. James;2012;9789631188691
+A szürke ötven árnyalata - A sötét ötven árnyalata;E.L. James;2012;9789631188707
+A lány a vonaton;Paula Hawkins;2015;978963118871A
+A szolgálólány meséje;Margaret Atwood;1985;9789631188721
+Az alkimista;Paulo Coelho;1988;9789631188738
+A katedrális;Ken Follett;1989;978963118874
+A tűz és jég dala;George R.R. Martin;1996;9789631188752
+A trónok harca;George R.R. Martin;1996;9789631188769
+A királyok csatája;George R.R. Martin;1998;9789631188776
