@@ -1,6 +1,6 @@
 # LINQ (Language Integrated Query)
 
-**`LINQ` egy olyan technológia, amely lehetővé teszi a különböző adatforrások (például listák, tömbök, adatbázisok) lekérdezését és manipulálását egy egységes, deklaratív<span style="text-decoration: underline" title="A deklaratív megközelítés C#-ban azt jelenti, hogy a kód leírja, mit szeretnénk elérni, nem pedig hogyan kell azt végrehajtani">🔍</span> szintaxissal. A LINQ lekérdezések hasonlóak az SQL lekérdezésekhez, de közvetlenül beépülnek a C# nyelvbe.**
+**`LINQ` egy olyan technológia, amely lehetővé teszi a különböző adatforrások (például listák, tömbök, adatbázisok) lekérdezését és manipulálását egy egységes, deklaratív<span style="text-decoration: underline" title="A deklaratív megközelítés azt jelenti, hogy a kód leírja, mit szeretnénk elérni, nem pedig hogyan (imperatív: lépésről lépésre) kell azt végrehajtani">🔍</span> szintaxissal. A LINQ lekérdezések hasonlóak az SQL lekérdezésekhez, de közvetlenül beépülnek a C# nyelvbe.**
 
 Az `anonim függvény`-ek lehetővé teszik, hogy név nélküli függvényeket hozz létre, amelyeket közvetlenül átadhatsz más metódusoknak. A `delegate` kulcsszót kell használni egy név nélküli függvény létrehozásához.
 
