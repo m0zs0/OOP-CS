@@ -135,7 +135,7 @@ IEnumerable<Auto> elsoKetAuto = autok.Take(2);
 IEnumerable<Auto> kettoUtan = autok.Skip(2);
 ```
 
-## List<T> Specifikus Metódusok
+## `List<T>` Specifikus Metódusok
 
 `Add`: Egy elemet ad a lista végéhez.
 ```c#
