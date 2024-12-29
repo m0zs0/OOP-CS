@@ -1,6 +1,6 @@
 # LINQ (Language Integrated Query)
 
-**`LINQ` egy olyan technológia, amely lehetővé teszi a különböző adatforrások (például listák, tömbök, adatbázisok) lekérdezését és manipulálását egy egységes, <span title="A deklaratív megközelítés C#-ban azt jelenti, hogy a kód leírja, mit szeretnénk elérni, nem pedig hogyan kell azt végrehajtani">deklaratív</span> szintaxissal. A LINQ lekérdezések hasonlóak az SQL lekérdezésekhez, de közvetlenül beépülnek a C# nyelvbe.**
+**`LINQ` egy olyan technológia, amely lehetővé teszi a különböző adatforrások (például listák, tömbök, adatbázisok) lekérdezését és manipulálását egy egységes, <span style="color: red; title="A deklaratív megközelítés C#-ban azt jelenti, hogy a kód leírja, mit szeretnénk elérni, nem pedig hogyan kell azt végrehajtani">deklaratív</span> szintaxissal. A LINQ lekérdezések hasonlóak az SQL lekérdezésekhez, de közvetlenül beépülnek a C# nyelvbe.**
 
 **`Lambda kifejezés`-ek pedig rövid, névtelen függvények, amelyeket gyakran használnak a LINQ lekérdezésekben a feltételek és műveletek meghatározására. Például egy egyszerű LINQ lekérdezés, amely egy lista elemeit szűri, így nézhet ki:**
 
