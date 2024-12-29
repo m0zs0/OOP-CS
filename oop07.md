@@ -57,7 +57,7 @@ A `generikus` kifejezés a programozásban olyan típusokat és metódusokat jel
 
 **Generikus Típusok és Metódusok**
 
-Generikus Típusok: Olyan osztályok vagy struktúrák, amelyek típusparamétereket használnak. Például a `List<T>` egy generikus típus, ahol a T helyére bármilyen típus behelyettesíthető.
+**Generikus Típusok**: Olyan osztályok vagy struktúrák, amelyek típusparamétereket használnak. Például a `List<T>` egy generikus típus, ahol a T helyére bármilyen típus behelyettesíthető.
 
 ```c#
 List<int> szamok = new List<int>();
@@ -71,7 +71,7 @@ szavak.Add("world");
 
 Ebben a példában a List<T> generikus típus, ahol a T helyére az int és a string típusok kerültek.
 
-Generikus Metódusok: Olyan metódusok, amelyek típusparamétereket használnak. Ezek a metódusok különböző típusokkal hívhatók meg anélkül, hogy újra kellene írni őket.
+**Generikus Metódusok**: Olyan metódusok, amelyek típusparamétereket használnak. Ezek a metódusok különböző típusokkal hívhatók meg anélkül, hogy újra kellene írni őket.
 
 ```c#
 public T GetFirstElement<T>(List<T> lista)
