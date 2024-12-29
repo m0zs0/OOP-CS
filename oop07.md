@@ -282,7 +282,7 @@ if (megtalaltAuto == null){
 ```
 
 -Statisztika:
-
+Írassuk ki márkák alapján, hogy hány autót tartunk nyilván.
 ```c#
 IEnumerable<IGrouping<string, Auto>> autokMarkaSzerint = a.GroupBy(auto => auto.Marka);
 foreach (IGrouping<string, Auto> csoport in autokMarkaSzerint){
@@ -310,3 +310,20 @@ foreach (KeyValuePair<string, List<Auto>> markakCsoport in autokMarkaSzerint){
    }
 }
 ```
+vagy
+```c#
+public class MarkaSzam
+{
+    public string Marka { get; set; }
+    public int Szam { get; set; }
+}
+
+IEnumerable<MarkaSzam> markaAutokSzama = a.GroupBy(auto => auto.Marka)
+                                           .Select(group => new MarkaSzam { Marka = group.Key, Szam = group.Count() });
+
+foreach (MarkaSzam item in markaAutokSzama)
+{
+    Console.WriteLine($"{item.Marka}: {item.Szam} db");
+}
+```
+
