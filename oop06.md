@@ -98,28 +98,60 @@ static List<Auto> Beolvas()
 </details>
 3. Készíts egy KepernyoreKiir metódust, amely kiírja az autók listáját a konzolra.
 <details>
-<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+<summary>Nyiss le a KepernyoreKiir metódus forrásáért!</summary>
 
-### `Beolvas` példa:
+### `KepernyoreKiir` példa:
 ```c#
+/// <summary>
+/// Kiírja képernyőre az autok lista tartalmat
+/// </summary>
+/// <param name="a">autok</param>
+/// <param name="cim">rendezés előtt vagy után</param>
+static void KepernyoreKiir(List<Auto> a, string cim)
+{
+    Console.WriteLine($"\n{cim}");
+    foreach (Auto auto in a)
+    {
+        Console.WriteLine(auto);
+    }
+   
+    //a.ForEach(x => Console.WriteLine(x));
+}
 ```
 </details>
 
 4. Készíts egy AtlagosKm metódust, amely kiszámítja és kiírja az autók átlagos futott kilométerét.
 <details>
-<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+<summary>Nyiss le a AtlagosKm metódus forrásáért!</summary>
 
-### `Beolvas` példa:
+### `AtlagosKm` példa:
 ```c#
+static void AtlagosKm(List<Auto> a)
+{
+    double osszeg = 0;
+    foreach (Auto auto in a)
+    {
+        osszeg += auto.FutottKm;
+    }
+    double atlag = osszeg / a.Count();
+    //double atlag = a.Average(auto => auto.FutottKm);
+    Console.WriteLine($"Az autók átlagos futott km: {atlag:f2}");
+}
 ```
 </details>
 
 5. Készíts egy LegidosebbAuto metódust, amely megkeresi és kiírja a legidősebb autó adatait a listából.
 <details>
-<summary>Nyiss le a Beolvas metódus forrásáért!</summary>
+<summary>Nyiss le a LegidosebbAuto metódus forrásáért!</summary>
 
-### `Beolvas` példa:
+### `LegidosebbAuto` példa:
 ```c#
+static void LegidosebbAuto(List<Auto> a)
+{
+    //Auto legidosebbAuto = a.MinBy(auto => auto.Evjarat);
+    Auto legidosebbAuto = a.OrderBy(auto => auto.Evjarat).FirstOrDefault();
+    Console.WriteLine($"\nLegidősebb autó adatai: {legidosebbAuto}");
+}
 ```
 </details>
 
