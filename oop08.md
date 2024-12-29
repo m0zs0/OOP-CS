@@ -2,20 +2,25 @@
 
 - [NASA.pdf megnyitása](NASA/NASA.pdf)
 - [NASAlog.txt megnyitása](NASA/NASAlog.txt)
-- [Nasa.cs megnyitása](NASA/Nasa.cs)
 - [Keres.cs megnyitása](NASA/Keres.cs)
+- [Nasa.cs megnyitása](NASA/Nasa.cs)
+
 
 ## Lézerlövészet
-(LEZERLOVESZET/LezerLoveszet.cs)
-(LEZERLOVESZET/Loves.cs)
-(LEZERLOVESZET/lovesek.txt)
-(LEZERLOVESZET/lovesek_fa.txt)
+- [lovesek_fa.txt megnyitása](LEZERLOVESZET/lovesek_fa.txt)
+- [lovesek.txt megnyitása](LEZERLOVESZET/lovesek.txt)
+- [LezerLoveszet.cs megnyitása](LEZERLOVESZET/LezerLoveszet.cs)
+- [Loves.cs megnyitása](LEZERLOVESZET/Loves.cs)
+
+
 
 ## Témazáró A csoport
-(KONYVTAR-Acsoport/konyvek.txt)
-(KONYVTAR-Acsoport/Könyvtár.pdf)
+- [Könyvtár.pdf megnyitása](KONYVTAR-Acsoport/Könyvtár.pdf)
+- [konyvek.txt megnyitása](KONYVTAR-Acsoport/konyvek.txt)
+
 
 ##Témazáró B csoport
-(SUBTITLE-Bcsoport/feliratok.txt)
-(SUBTITLE-Bcsoport/subtitle.pdf)
+- [subtitle.pdf megnyitása](SUBTITLE-Bcsoport/subtitle.pdf)
+- [feliratok.txt megnyitása](SUBTITLE-Bcsoport/feliratok.txt)
+
   
