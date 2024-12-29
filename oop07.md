@@ -10,7 +10,7 @@ IEnumerable<int> parosSzamok = szamok.Where(n => n % 2 == 0);
 Console.WriteLine("Páros számok:");
 foreach (int szam in parosSzamok)
 {
-    Console.WriteLine(szamok);
+    Console.WriteLine(szam);
 }
 ```
 
