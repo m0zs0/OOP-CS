@@ -62,6 +62,7 @@ class Auto
 }
 ```
 </details>
+
 2. Készíts egy Beolvas metódust, amely beolvassa az autók adatait egy fájlból egy List<Auto> típusú listába.
 <details>
 <summary>Nyiss le a Beolvas metódus forrásáért!</summary>
@@ -96,6 +97,7 @@ static List<Auto> Beolvas()
 }
 ```
 </details>
+
 3. Készíts egy KepernyoreKiir metódust, amely kiírja az autók listáját a konzolra.
 <details>
 <summary>Nyiss le a KepernyoreKiir metódus forrásáért!</summary>
