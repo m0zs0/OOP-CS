@@ -1,6 +1,6 @@
 ## NASA 1995
 
-- ./NASA/NASA.pdf megnyitása
+- [NASA.pdf megnyitása](NASA/NASA.pdf)
 - NASAlog.txt megnyitása
 - Nasa.cs megnyitása
 - Keres.cs megnyitása
