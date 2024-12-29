@@ -207,11 +207,25 @@ namespace BasicCalculator.Tests
 {
     public class UnitTest1
     {
+        //Fact: nem paraméterezett tesztet jelöl. Olyan tesztekhez használjuk, amelyek mindig ugyanazokat a bemeneti adatokat használják, és nincs szükségük különböző tesztesetekre.
         [Fact]
         public void Osszeadas_HelyesOsszegetAdVissza()
         {
             double eredmeny = Calculator.Add(2, 3);
             Assert.Equal(5, eredmeny);
+        }
+
+        //Theory: paraméterezett teszteket jelöl, amelyek különböző bemeneti adatokat fogadnak. A [Theory] attribútummal együtt használjuk az [InlineData] attribútumot, hogy megadjuk a különböző tesztesetek bemeneti adatait. 
+        [Theory]
+        [InlineData(5, 6, 11)]
+        [InlineData(9, 8, 17)]
+        public void Osszeadas_HelyesOsszegeketAdVissza(int x, int y, int vartEredmeny)
+        {
+            // Act
+            double eredmeny = Calculator.Add(x, y);
+        
+            // Assert
+            Assert.Equal(vartEredmeny, eredmeny);
         }
 
         [Fact]
