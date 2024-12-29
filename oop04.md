@@ -2,7 +2,7 @@
 
 - c# accessor-ok: a getter és setter metódusok
 - Tulajdonságok (Properties)
-- Lambda kifejezés
+- Lambda operátor
 - Automatikus tulajdonság
 
 
@@ -70,7 +70,7 @@ Mint látható a get könnyen értelmezhető, a set nél viszont a value a köve
 Ha egy mező egy = (legyen egyenlő) bal oldalán szerepel akkor az egy set lesz, hiszen a jobb oldal értékét szeretném beletölteni a bal oldalon szereplő mezőbe. Kvázi a value érték annak a kifejezésnek lesz az értéke, ami az egyenlőségjel jobb oldalán szerepel. Tehát ez egy "automatikus paraméter".
 
 ## lambda operátor
-A => operátor (lambda kifejezés) a getter és setter metódusokban csak akkor használható, ha a művelet egy egyszerű értékadás vagy egy egyszerű kifejezés kiértékelése. Ha a getter vagy setter metódusban összetettebb logikát kell megvalósítani, akkor hagyományos metódusokat kell használni.
+A => (lambda) operátor a getter és setter metódusokban csak akkor használható, ha a művelet egy egyszerű értékadás vagy egy egyszerű kifejezés kiértékelése. Ha a getter vagy setter metódusban összetettebb logikát kell megvalósítani, akkor hagyományos metódusokat kell használni.
 
 Ezt a formátumot tovább egyszerűsíthetjük a lambda kifejezéssel a következő módon:
 ```c#
