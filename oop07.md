@@ -135,8 +135,72 @@ IEnumerable<Auto> elsoKetAuto = autok.Take(2);
 IEnumerable<Auto> kettoUtan = autok.Skip(2);
 ```
 
+## List<T> Specifikus Metódusok
 
-
+`Add`: Egy elemet ad a lista végéhez.
+```c#
+autok.Add(new Auto { FutottKm = 30000, Evjarat = 2021 });
+```
+`AddRange`: Több elemet ad a lista végéhez.
+```c#
+autok.AddRange(new List<Auto> { new Auto { FutottKm = 25000, Evjarat = 2019 }, new Auto { FutottKm = 18000, Evjarat = 2020 } });
+```
+`Insert`: Egy elemet szúr be a lista adott pozíciójára.
+```c#
+autok.Insert(1, new Auto { FutottKm = 22000, Evjarat = 2016 });
+```
+`InsertRange`: Több elemet szúr be a lista adott pozíciójára.
+```c#
+autok.InsertRange(1, new List<Auto> { new Auto { FutottKm = 21000, Evjarat = 2017 }, new Auto { FutottKm = 23000, Evjarat = 2018 } });
+```
+`Remove`: Eltávolítja az első előfordulását egy adott elemnek a listából.
+```c#
+autok.Remove(someAuto);
+```
+`RemoveAt`: Eltávolítja a listából az adott indexen lévő elemet.
+```c#
+autok.RemoveAt(2);
+```
+`RemoveRange`: Eltávolítja a listából az adott tartományban lévő elemeket.
+```c#
+autok.RemoveRange(1, 2);
+```
+`Clear`: Eltávolítja az összes elemet a listából.
+```c#
+autok.Clear();
+```
+`Sort`: Rendezési műveletet hajt végre a listán.
+```c#
+autok.Sort((a1, a2) => a1.Evjarat.CompareTo(a2.Evjarat));
+```
+`Reverse`: Megfordítja a lista elemeinek sorrendjét.
+```c#
+autok.Reverse();
+```
+`BinarySearch`: Keresést végez egy rendezett listában.
+```c#
+int index = autok.BinarySearch(someAuto, new AutoComparer());
+```
+`Find`: Megkeresi az első elemet, amely megfelel egy feltételnek.
+```c#
+Auto auto = autok.Find(a => a.Marka == "Toyota");
+```
+`FindAll`: Megkeresi az összes elemet, amely megfelel egy feltételnek.
+```c#
+List<Auto> toyotaAutok = autok.FindAll(a => a.Marka == "Toyota");
+```
+`FindIndex`: Megkeresi az első olyan elem indexét, amely megfelel egy feltételnek.
+```c#
+int index = autok.FindIndex(a => a.Marka == "Toyota");
+```
+`FindLast`: Megkeresi az utolsó elemet, amely megfelel egy feltételnek.
+```c#
+Auto auto = autok.FindLast(a => a.Marka == "Toyota");
+```
+`FindLastIndex`: Megkeresi az utolsó olyan elem indexét, amely megfelel egy feltételnek.
+```c#
+int index = autok.FindLastIndex(a => a.Marka == "Toyota");
+```
 
 
 
