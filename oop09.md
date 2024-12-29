@@ -1,4 +1,4 @@
-# 10. modul BasicCalculator + Tesztelés
+# 9. modul BasicCalculator + Tesztelés
 
 Készíts egy egyszerű számológép alkalmazást a BasicCalculator névtérben, amely alapvető matematikai műveleteket végez. Az alkalmazásnak támogatnia kell az összeadást, kivonást, szorzást, osztást, négyzetgyök számítást és hatványozást.
 
