@@ -2,7 +2,7 @@
 
 - Static mező használata
 - Paraméteres konstruktor
-- ToString override
+- ToString újradefiniálás (override)
 - Ellenőrzött adatbevitel billentyűzetről (+kivételkezelés)
 - Programozási tételek megvalósítása
 
