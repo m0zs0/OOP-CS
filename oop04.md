@@ -82,7 +82,7 @@ Sőt, ha csak ilyen egyszerű a két metódus, akkor:
 public string Rendszam { get ; set; }
 ```
 
-Megjegyzés: Bonyolultabb feltétel melletti beállítás formája a következő: Pl a Gyártási Év csak 1900-Mostani év -ig legyen elfogadva:
+Megjegyzés: Bonyolultabb feltétel melletti beállítás formája a következő (validációs feltétel): Pl a Gyártási Év csak 1900-Mostani év -ig legyen elfogadva:
 ```c#
 public int GyartasiEv
 {
