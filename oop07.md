@@ -310,7 +310,7 @@ foreach (KeyValuePair<string, List<Auto>> markakCsoport in autokMarkaSzerint){
    }
 }
 ```
-vagy
+vagy (method chaining-el vagy láncolással)
 ```c#
 public class MarkaSzam
 {
