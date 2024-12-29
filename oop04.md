@@ -72,12 +72,12 @@ A => operátor (lambda kifejezés) a getter és setter metódusokban csak akkor 
 
 Ezt a formátumot tovább egyszerűsíthetjük a lambda kifejezéssel a következő módon:
 ```c#
-public int Rendszam { get => _rendszam; set => _rendszam = value; }
+public string Rendszam { get => _rendszam; set => _rendszam = value; }
 ```
 
 Sőt, ha csak ilyen egyszerű a két metódus, akkor:
 ```c#
-public int Rendszam { get ; set; }
+public string Rendszam { get ; set; }
 ```
 
 Megjegyzés: Bonyolultabb feltétel melletti beállítás formája a következő: Pl a Gyártási Év csak 1900-Mostani év -ig legyen elfogadva:
