@@ -13,7 +13,7 @@ IEnumerable<int> parosSzamok = szamok.Where(delegate(int n) {
                                }
                                );
 ```
-A delegate(int n) { return n % 2 == 0; } kifejezés egy anonim (névtelen) függvényt hoz létre. A A Where metódus egy iterációt végez az IEnumerable<int> gyűjteményen, és minden egyes elemet egyesével vizsgál meg. Az elemeket a függvényben n-nek nevezi el, és a kifejezés logikája alapján dönti el, hogy az adott elem megfelel-e a feltételnek (n % 2 == 0: n elem osztható-e 2-vel maradék nélkül), ha igaz a kiértékelés, akkor az (n) elem bekerül az eredmény gyűjteménybe .
+A delegate(int n) { return n % 2 == 0; } kifejezés egy anonim (névtelen) függvényt hoz létre. A Where metódus egy iterációt végez az IEnumerable<int> gyűjteményen, és minden egyes elemet egyesével vizsgál meg. Az elemeket a függvényben n-nek nevezi el, és a kifejezés logikája alapján dönti el, hogy az adott elem megfelel-e a feltételnek (n % 2 == 0: n elem osztható-e 2-vel maradék nélkül), ha igaz a kiértékelés, akkor az (n) elem bekerül az eredmény gyűjteménybe .
 
 **`Lambda kifejezés`-ek pedig rövid, névtelen függvények, amelyeket gyakran használnak a LINQ lekérdezésekben a feltételek és műveletek meghatározására. Például egy egyszerű LINQ lekérdezés, amely egy lista elemeit szűri, így nézhet ki:**
 ```c#
