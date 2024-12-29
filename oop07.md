@@ -1,12 +1,21 @@
 # LINQ (Language Integrated Query)
+
 -delegate: névtelen függvény
+
 -lambda kifejezés
--IEnumerable<T> és List<T>
+
+-`IEnumerable<T>` és `List<T>`
+
 -Aggregáló függvények
+
 -Szűrő és rendező függvények
+
 -Generikus Típusok és Metódusok
+
 -`List<T>` Specifikus Metódusok
+
 -Láncolás (method chaining)
+
 
 **`LINQ` egy olyan technológia, amely lehetővé teszi a különböző adatforrások (például listák, tömbök, adatbázisok) lekérdezését és manipulálását egy egységes, deklaratív<span style="text-decoration: underline" title="A deklaratív megközelítés azt jelenti, hogy a kód leírja, mit szeretnénk elérni, nem pedig hogy hogyan (imperatív: lépésről lépésre) kell azt végrehajtani.">🔍</span> szintaxissal. A LINQ lekérdezések hasonlóak az SQL lekérdezésekhez, de közvetlenül beépülnek a C# nyelvbe.**
 
