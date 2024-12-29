@@ -130,13 +130,13 @@ static void KepernyoreKiir(List<Auto> a, string cim)
 ```c#
 static void AtlagosKm(List<Auto> a)
 {
+    //double atlag = a.Average(auto => auto.FutottKm);
     double osszeg = 0;
     foreach (Auto auto in a)
     {
         osszeg += auto.FutottKm;
     }
     double atlag = osszeg / a.Count();
-    //double atlag = a.Average(auto => auto.FutottKm);
     Console.WriteLine($"Az autók átlagos futott km: {atlag:f2}");
 }
 ```
@@ -151,13 +151,23 @@ static void AtlagosKm(List<Auto> a)
 static void LegidosebbAuto(List<Auto> a)
 {
     //Auto legidosebbAuto = a.MinBy(auto => auto.Evjarat);
+    ///
+    Auto legidosebbAuto = a[0];
+    foreach (Auto auto in a)
+    {
+        if (auto.GyartasiEv < legidosebbAuto.GyartasiEv)
+        {
+            legidosebbAuto = auto;
+        }
+    }
+    ///
     Auto legidosebbAuto = a.OrderBy(auto => auto.Evjarat).FirstOrDefault();
     Console.WriteLine($"\nLegidősebb autó adatai: {legidosebbAuto}");
 }
 ```
 </details>
 
-(6. Készíts egy LegtobbetFutottAuto metódust, amely megkeresi és kiírja a legtöbbet futott autó adatait a listából.)
+6. Készíts egy LegtobbetFutottAuto metódust, amely megkeresi és kiírja a legtöbbet futott autó adatait a listából.
 <details>
 <summary>Nyiss le a LegtobbetFutottAuto metódus forrásáért!</summary>
 
@@ -166,6 +176,15 @@ static void LegidosebbAuto(List<Auto> a)
 static void LegtobbetFutottAuto(List<Auto> a)
 {
     //Auto legtobbetFutottAuto = a.MaxBy(auto => auto.FutottKm);
+    ///
+    Auto legtobbetFutottAuto = a[0];
+    foreach (Auto auto in a)
+    {
+        if (auto.FutottKm > legtobbetFutottAuto.FutottKm)
+        {
+            legtobbetFutottAuto = auto;
+        }
+    }///
     Auto legtobbetFutottAuto = a.OrderByDescending(auto => auto.FutottKm).FirstOrDefault();
     Console.WriteLine($"\nLegtöbett futott km autó adatai: {legtobbetFutottAuto}");
 }
@@ -210,20 +229,24 @@ static void KeresesRendszamAlapjan(List<Auto> a)
 
 ### `Rendez` példa:
 ```c#
-static void Rendez(List<Auto> a)
+static List<Auto> Rendez(List<Auto> a)
 {
-    for (int i = 0; i < a.Count-1; i++)
+    //a.Sort((x, y) => x.GyartasiEv.CompareTo(y.GyartasiEv));
+    ///
+    for (int i = 0; i < a.Count - 1; i++)
     {
-        for (int j = i+1; j < a.Count; j++)
+        for (int j = 0; j < a.Count - i - 1; j++)
         {
-            if (a[i].Evjarat > a[j].Evjarat)
+            if (a[j].GyartasiEv > a[j + 1].GyartasiEv)
             {
-                Auto seged = a[i];
-                a[i] = a[j];
-                a[j] = seged;
+                // Csere
+                Auto temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
             }
         }
-    }
+    }///
+    return a;
 }
 ```
 </details>
@@ -247,7 +270,7 @@ static void AutokListajaMarkaSzerint(List<Auto> a)
         }
         autokMarkaSzerint[auto.Marka].Add(auto);
     }
-    //var autokMarkaSzerint = a.GroupBy(auto => auto.Marka);
+    //IEnumerable<IGrouping<string, Auto>> autokMarkaSzerint = a.GroupBy(auto => auto.Marka);
 
     //Csoportok kiírása
     foreach (KeyValuePair<string, List<Auto>> markakCsoport in autokMarkaSzerint)
@@ -259,19 +282,19 @@ static void AutokListajaMarkaSzerint(List<Auto> a)
         }
     }
    
-    /*foreach (var markakCsoport in autokMarkaSzerint)
+    /*foreach (IGrouping<string, Auto> csoport in autokMarkaSzerint)
     {
-        Console.WriteLine(markakCsoport.Key);
-        foreach (var csoportbeliAuto in markakCsoport)
-        {
-            Console.WriteLine($"  {csoportbeliAuto}");
-        }
+      Console.WriteLine($"{csoport.Key}: {csoport.Count()} db");
+      foreach (Auto auto in csoport)
+      {
+          Console.WriteLine($"\t{auto}");
+      }
     }*/
 }
 ```
 </details>
   
-(10. Készíts egy AutokListajaEvjaratSzerint metódust, amely csoportosítja és kiírja az autókat évjárat szerint.)
+10. Készíts egy AutokListajaEvjaratSzerint metódust, amely csoportosítja és kiírja az autókat évjárat szerint.
 <details>
 <summary>Nyiss le a AutokListajaEvjaratSzerint metódus forrásáért!</summary>
 
@@ -296,9 +319,26 @@ static void AutokListajaEvjaratSzerint(List<Auto> a)
 ```
 </details>
 
-(- Készíts egy AutokListajaFutottKmSzerint metódust, amely csoportosítja és kiírja az autókat futott kilométer szerint.)
+11. Készíts egy AutokListajaFutottKmSzerint metódust, amely csoportosítja és kiírja az autókat futott kilométer szerint.
 
+<details>
+<summary>Nyiss le a AutokListajaFutottKmSzerint metódus forrásáért!</summary>
 
+### `AutokListajaFutottKmSzerint` példa:
+```c#
+static void AutokListajaFutottKmSzerint(List<Auto> a)
+{
+    Console.Write("\nAdj meg egy kilométer értéket: ");
+    int keresettKm = int.Parse(Console.ReadLine());
+    List<Auto> kmAutok = a.FindAll(auto => auto.FutottKm > keresettKm);
+    Console.WriteLine($"\n{keresettKm} km felett futott autók:");
+    foreach (var auto in kmAutok)
+    {
+        Console.WriteLine(auto);
+    }
+}
+```
+</details>
 
 <details>
 <summary>Nyiss le a Program.cs forrásáért!</summary>
@@ -307,15 +347,16 @@ static void AutokListajaEvjaratSzerint(List<Auto> a)
 ```c#
 static void Main(string[] args){
     List<Auto> autok = Beolvas();
-    KepernyoreKiir(autok, "Rendezés előtt");
-    Rendez(autok);
-    KepernyoreKiir(autok, "Rendezés után");
+    KepernyoreKiir(autok,"Autók listája");
+    List<Auto> autokRendezveGyartasiEvSzerint = Rendez(new List<Auto>(autok));
+    KepernyoreKiir(autokRendezveGyartasiEvSzerint, "Autók gyártási év szerint rendezett listája");
+    KeresesRendszamAlapjan(autok);
     LegidosebbAuto(autok);
     LegtobbetFutottAuto(autok);
-    KeresesRendszamAlapjan(autok);
     AtlagosKm(autok);
     AutokListajaMarkaSzerint(autok);
     AutokListajaEvjaratSzerint(autok);
+    AutokListajaFutottKmSzerint(autok);
 
     Console.WriteLine("Nyomj egy billentyűt a kilépéshez");
     Console.ReadKey();
