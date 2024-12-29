@@ -49,13 +49,13 @@ a1.SetRendszam("ACB-123");
 
 ## Tulajdonság (Property)
 
-** A tulajdonságok (properties) fontos szerepet játszanak az objektumorientált programozásban. **
+**A tulajdonságok (properties) fontos szerepet játszanak az objektumorientált programozásban.**
 - Encapsulation: Lehetővé teszik az adatok elrejtését és védelmét, szabályozott hozzáférést biztosítanak hozzájuk.
 - Validation: Segítségével érvényesítési logikát adhatsz meg az adatok beállításakor vagy lekérdezésekor.
 - Readability: Használatuk növeli a kód olvashatóságát és karbantarthatóságát. 
 - Flexibility: A tulajdonságok lehetővé teszik a getter és setter metódusok testreszabását
 
-* Egy tulajdonság - ami lehet akár automatikus tulajdonság is (ami egy háttérmezőt (backing field) hoz létre) egy privát mező értékének beállítására vagy módosítására szolgál. Ezeket úgynevezett accessor függvényekkel tudjuk megtenni. A get accessor (getter) az értékének lekérésére, a set accessor (setter) az értékének beállítására szolgál. *
+*Egy tulajdonság - ami lehet akár automatikus tulajdonság is (ami egy háttérmezőt (backing field) hoz létre) egy privát mező értékének beállítására vagy módosítására szolgál. Ezeket úgynevezett accessor függvényekkel tudjuk megtenni. A get accessor (getter) az értékének lekérésére, a set accessor (setter) az értékének beállítására szolgál.*
 
 Olyan gyakran kell egy példány mezőit elérni, hogy az előbbi két metódust elnevezték getter, illetve setter metódusnak és egyszerűsítést vezettek be a szintaxisukra:
 Ha az IDE-ben jobbklikkelünk az adott privát változón, majd a `Quick action`/`Encapsulate field: use property` lehetőséget választjuk, akkor elkészül egy úgynevezett Property (Tulajdonság) "metódus", aminek a neve a privát mező nevével egyezik meg, csak nagybetűvel kezdődik, és tartalmaz egy get és egy set metódust:
