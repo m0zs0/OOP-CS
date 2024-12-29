@@ -1,6 +1,6 @@
 # 4. modul
 
-- Getter és setter metódusok
+- c# accessor-ok: a getter és setter metódusok
 - Tulajdonságok (Properties)
 - Lambda kifejezés
 - Automatikus tulajdonság
