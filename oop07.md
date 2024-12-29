@@ -2,6 +2,18 @@
 
 **`LINQ` egy olyan technológia, amely lehetővé teszi a különböző adatforrások (például listák, tömbök, adatbázisok) lekérdezését és manipulálását egy egységes, deklaratív<span style="text-decoration: underline" title="A deklaratív megközelítés C#-ban azt jelenti, hogy a kód leírja, mit szeretnénk elérni, nem pedig hogyan kell azt végrehajtani">🔍</span> szintaxissal. A LINQ lekérdezések hasonlóak az SQL lekérdezésekhez, de közvetlenül beépülnek a C# nyelvbe.**
 
+Az `anonim függvény`-ek lehetővé teszik, hogy név nélküli függvényeket hozz létre, amelyeket közvetlenül átadhatsz más metódusoknak. A `delegate` kulcsszót kell használni egy név nélküli függvény létrehozásához.
+
+```c#
+List<int> szamok = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+//!a var később kerül megmagyarázásra!
+var parosSzamok = szamok.Where(delegate(int n) {
+                                    return n % 2 == 0;
+                               }
+                               );
+```
+
 **`Lambda kifejezés`-ek pedig rövid, névtelen függvények, amelyeket gyakran használnak a LINQ lekérdezésekben a feltételek és műveletek meghatározására. Például egy egyszerű LINQ lekérdezés, amely egy lista elemeit szűri, így nézhet ki:**
 ```c#
 List<int> szamok = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
