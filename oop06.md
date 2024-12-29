@@ -226,8 +226,8 @@ static void Rendez(List<Auto> a)
 ```
 </details>
 
- 9. Készíts egy AutokListajaMarkaSzerint metódust, amely csoportosítja és kiírja az autókat márkák szerint (darabszámukat is).
-     <details>
+9. Készíts egy AutokListajaMarkaSzerint metódust, amely csoportosítja és kiírja az autókat márkák szerint (darabszámukat is).
+<details>
 <summary>Nyiss le a AutokListajaMarkaSzerint metódus forrásáért!</summary>
 
 ### `AutokListajaMarkaSzerint` példa:
