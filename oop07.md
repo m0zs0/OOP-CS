@@ -5,14 +5,14 @@
 
 **`Lambda kifejezés`-ek pedig rövid, névtelen függvények, amelyeket gyakran használnak a LINQ lekérdezésekben a feltételek és műveletek meghatározására. Például egy egyszerű LINQ lekérdezés, amely egy lista elemeit szűri, így nézhet ki:**
 
+A System.Linq névtérben található metódusok bármilyen `IEnumerable<T>` típusú gyűjteményen használhatók, beleértve a `List<T>` típusú gyűjteményeket is. A `List<T>` 
+
 ```c#
 int evenNumbers = numbers.Where(n => n % 2 == 0);
 ```
 
-A C# függvények (mint például MinBy, Sum, Average) és a LINQ (Language Integrated Query) függvények (mint például Where, OrderBy) mind a LINQ részei, de különböző célokat szolgálnak és különböző típusú műveleteket végeznek.
-
-## Beépített C# Függvények (Aggregáló függvények)
-*Ezek a függvények általában aggregáló műveleteket végeznek, amelyek egy gyűjtemény elemeit egyetlen értékké redukálják. Néhány példa:*
+## Aggregáló függvények
+*Egy gyűjtemény elemeit egyetlen értékké redukálják. Néhány példa:*
 
 `Sum`: Összeadja a gyűjtemény elemeit.
 ```c#
@@ -44,7 +44,7 @@ Auto legujabbAuto = autok.MaxBy(auto => auto.Evjarat);
 ```
 
 
-## LINQ Függvények (Szűrő és rendező függvények)
+## Szűrő és rendező függvények
 *Ezek a függvények általában szűrési, rendezési és egyéb transzformációs műveleteket végeznek a gyűjtemény elemein. Néhány példa:*
 
 `Where`: Szűri a gyűjtemény elemeit egy feltétel alapján.
