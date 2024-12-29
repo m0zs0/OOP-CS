@@ -5,11 +5,27 @@
 
 **`Lambda kifejezés`-ek pedig rövid, névtelen függvények, amelyeket gyakran használnak a LINQ lekérdezésekben a feltételek és műveletek meghatározására. Például egy egyszerű LINQ lekérdezés, amely egy lista elemeit szűri, így nézhet ki:**
 
-A System.Linq névtérben található metódusok bármilyen `IEnumerable<T>` típusú gyűjteményen használhatók, beleértve a `List<T>` típusú gyűjteményeket is. A `List<T>` 
+A System.Linq névtérben található metódusok bármilyen `IEnumerable<T>` típusú gyűjteményen használhatók, beleértve a `List<T>` típusú gyűjteményeket is. A LINQ metódusok gyakran IEnumerable<T> típusú eredményt és vannak olyan LINQ metódusok is, amelyek egyetlen értéket adnak vissza. A `List<T>` osztály metódusai közvetlenül `List<T>` típusú eredményt adnak vissza.
+Ha egy `List<T>`-t `IEnumerable<T>`-ként használsz, akkor csak az `IEnumerable<T>` által biztosított metódusokat érheted el. Ha szükséged van a `List<T>` speciális metódusaira, vissza kell alakítanod a gyűjteményt `List<T>` típusúvá a ToList metódussal.
 
 ```c#
+//egyszerű példa
 int evenNumbers = numbers.Where(n => n % 2 == 0);
 ```
+
+```c#
+IEnumerable<Auto> toyotaAutok = autok.Where(auto => auto.Marka == "Toyota");
+```
+helyett jó a
+```c#
+List<Auto> toyotaAutok = autok.Where(auto => auto.Marka == "Toyota").ToList();
+```
+vagy a 
+```c#
+List<Auto> toyotaAutok = autok.FindAll(auto => auto.Marka == "Toyota");
+```
+
+
 
 ## Aggregáló függvények
 *Egy gyűjtemény elemeit egyetlen értékké redukálják. Néhány példa:*
