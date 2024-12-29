@@ -3,14 +3,12 @@
 **`LINQ` egy olyan technológia, amely lehetővé teszi a különböző adatforrások (például listák, tömbök, adatbázisok) lekérdezését és manipulálását egy egységes, deklaratív<span style="text-decoration: underline" title="A deklaratív megközelítés C#-ban azt jelenti, hogy a kód leírja, mit szeretnénk elérni, nem pedig hogyan kell azt végrehajtani">🔍</span> szintaxissal. A LINQ lekérdezések hasonlóak az SQL lekérdezésekhez, de közvetlenül beépülnek a C# nyelvbe.**
 
 **`Lambda kifejezés`-ek pedig rövid, névtelen függvények, amelyeket gyakran használnak a LINQ lekérdezésekben a feltételek és műveletek meghatározására. Például egy egyszerű LINQ lekérdezés, amely egy lista elemeit szűri, így nézhet ki:**
+```c#
+int evenNumbers = numbers.Where(n => n % 2 == 0);
+```
 
 A System.Linq névtérben található metódusok bármilyen `IEnumerable<T>` típusú gyűjteményen használhatók, beleértve a `List<T>` típusú gyűjteményeket is. A LINQ metódusok gyakran IEnumerable<T> típusú értéket (amely lehetővé teszi a gyűjtemény elemeinek iterálását) vagy egyetlen más típusú értéket (int, double, Auto) adnak vissza. A `List<T>` osztály metódusai közvetlenül `List<T>` típusú eredményt adnak vissza.
 Ha egy `List<T>`-t `IEnumerable<T>`-ként használunk, akkor csak az `IEnumerable<T>` által biztosított metódusokat érhetjük el. Ha szükség van a `List<T>` speciális metódusaira, vissza kell alakítani a gyűjteményt `List<T>` típusúvá a ToList metódussal.
-
-```c#
-//egyszerű példa
-int evenNumbers = numbers.Where(n => n % 2 == 0);
-```
 
 ```c#
 IEnumerable<Auto> toyotaAutok = autok.Where(auto => auto.Marka == "Toyota");
