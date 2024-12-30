@@ -1,3 +1,4 @@
+*https://csharptutorial.hu/docs/hellovilag-hellocsharp/*
 # 1. modul Az osztály tagjai
 
 - Példányszintű tagok
