@@ -41,7 +41,7 @@
 - [konyvek.txt megnyitása](KONYVTAR-Acsoport/konyvek.txt)
 
 
-##Témazáró B csoport
+## Témazáró B csoport
 - [subtitle.pdf megnyitása](SUBTITLE-Bcsoport/subtitle.pdf)
 - [feliratok.txt megnyitása](SUBTITLE-Bcsoport/feliratok.txt)
 
