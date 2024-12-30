@@ -1,4 +1,4 @@
-# 6. modul Összefoglalás
+# 6. modul Esettanulmány
 
 - Osztályok
 - Osztálytagok
