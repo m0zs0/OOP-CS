@@ -1,7 +1,7 @@
 # 2. modul
 
 - Static mező használata
-- Paraméteres konstruktor
+- Paraméteres konstruktor, destruktor
 - ToString újradefiniálás (override)
 - Ellenőrzött adatbevitel billentyűzetről (+kivételkezelés)
 - Programozási tételek megvalósítása
