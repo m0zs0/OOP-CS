@@ -16,7 +16,7 @@
 13. Hogyan lehet kiszámítani a két DateTime objektum közötti különbséget?
 14. Mi a különbség a privát és a nyilvános (private és public) tagok között?
 15. Hogyan lehet egy osztályban privát mezőket (fields) definiálni?
-16. Mi a konstruktor, és hogyan használható C#-ban?
+16. Mi a konstruktor illetve a destruktor, és hogyan használhatók C#-ban?
 17. Mit jelent a paraméteres konstruktor és mikor használjuk?
 18. Hogyan lehet felüldefiniálni a ToString() metódust egy osztályban?
 
