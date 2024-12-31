@@ -49,6 +49,13 @@ internal class Allat
             }
         }
 
+        // Destruktor: akkor hívnak meg, amikor egy objektum élettartama véget ér, és az erőforrások (fájlok, hálózati kapcsolatok, memória) felszabadítására van szükség. A .NET keretrendszer szemétgyűjtője (garbage collector) hatékonyan kezeli az erőforrások felszabadítását, így ritkán használjuk, az IDisposable interfész és a using utasítás gyakran jobb megoldás az erőforrások kezelésére.
+        ~Allat()
+        {
+            // Itt végezhetünk erőforrás felszabadítást, ha szükséges
+            Console.WriteLine($"{this.nev} destruktora meghívásra került.");
+        }
+
         public override string ToString()
         {
             return $"Név: {nev}, Lábak száma: {labakSzama}, Átlagos súly: {atlagosSuly} kg, Védett: {vedett}";
