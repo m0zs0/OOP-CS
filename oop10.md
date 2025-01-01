@@ -98,22 +98,21 @@ Vezérlő tartalmának igazítása
 >Properties/Layout/Padding:
 Belső margó méretei
 
--TextBox: szöveg input
+-`TextBox`: szöveg input
 
-A TextBlock nagyobb mennyiségű szöveg megjelenítése, többsoros szöveg megjelenítése
--TextBlock: statikus szöveg megjelenítése
+-`TextBlock`: statikus, nagyobb mennyiségű szöveg megjelenítése, többsoros szöveg megjelenítése
 >Properties/Text/TextWrapping
 Szöveg automatikus tördelése
 
 
--Button
+-`Button`
 >Properties/Appearance/BorderThickness
 Keret
 
 >Properties/Appearance/Effect
 Árnyék adása a vezérlőhöz: DropShadowEffect
 
--Wrappanel: A WrapPanel egy WPF konténer, amely a gyermekelemeket vízszintesen vagy függőlegesen helyezi el, és automatikusan új sorba vagy oszlopba tör, ha a rendelkezésre álló hely elfogy.
+-`Wrappanel`: A WrapPanel egy WPF konténer, amely a gyermekelemeket vízszintesen vagy függőlegesen helyezi el, és automatikusan új sorba vagy oszlopba tör, ha a rendelkezésre álló hely elfogy.
 ```c#
 <Button HorizontalAlignment="Left" Margin="264,217,0,0" VerticalAlignment="Top">
     <Button.Content>
