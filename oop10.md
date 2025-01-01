@@ -382,9 +382,9 @@ private void RemovePlaceholder(TextBox textBox, string placeholderText)
 ```
 
 <details>
-<summary>Nyiss le a végleges MainWindox.xaml forrásáért!</summary>
+<summary>Nyiss le a végleges MainWindow.xaml forrásáért!</summary>
 
-### `MainWindox.xaml` példa:
+### `MainWindow.xaml` példa:
 ```c#
 <Window x:Class="WPF_1_Osszeado.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -426,9 +426,9 @@ private void RemovePlaceholder(TextBox textBox, string placeholderText)
 </details>
 
 <details>
-<summary>Nyiss le a végleges MainWindox.xaml.cs forrásáért!</summary>
+<summary>Nyiss le a végleges MainWindow.xaml.cs forrásáért!</summary>
 
-### `MainWindox.xaml.cs` példa:
+### `MainWindow.xaml.cs` példa:
 ```c#
 using System.Text;
 using System.Windows;
