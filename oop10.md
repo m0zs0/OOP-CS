@@ -342,17 +342,17 @@ private void InputATextBox_LostFocus(object sender, RoutedEventArgs e)
 
 Ekkor az InputATextBox már jól fog működni. Ha belegondolunk akkor a másik InputBTextBox működése pont ugyanez lenne, annyi különbséggel, hogy a vezérlő másik. Ezt egy kódátszervezéssel könnyen meg tudjuk oldani:
 
--Mindkét TextBox vezérlő GotFocus és LostFocus eseménykezelőfüggvényét állítsuk ugyanarra:
+- Mindkét TextBox vezérlő GotFocus és LostFocus eseménykezelőfüggvényét állítsuk ugyanarra:
 
-  -InputATextBox/GotFocus: TextBox_GotFocus
+  - InputATextBox/GotFocus: TextBox_GotFocus
   
-  -InputBTextBox/GotFocus: TextBox_GotFocus
+  - InputBTextBox/GotFocus: TextBox_GotFocus
 
-  -InputATextBox/LostFocus: TextBox_LostFocus
+  - InputATextBox/LostFocus: TextBox_LostFocus
 
-  -InputBTextBox/LostFocus: TextBox_LostFocus
+  - InputBTextBox/LostFocus: TextBox_LostFocus
 
--Majd ezt követően minden eseménykezelőben nézzük meg, hogy ki volt a küldő, és arra hajtsuk végre a placeholder beállítást.
+- Majd ezt követően minden eseménykezelőben nézzük meg, hogy ki volt a küldő, és arra hajtsuk végre a placeholder beállítást.
 
 ```c#
 private void TextBox_GotFocus(object sender, RoutedEventArgs e)
