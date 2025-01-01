@@ -214,7 +214,7 @@ Most ugyan csak egy Button-unk van, de nevezzük el azt is
 AddButton 
 
 2. lépés
-Kattintsunk a Properties ablakban az Events ikont
+Kattintsunk a Properties ablakban az Events ikonra ![Icon_Events.PNG](PICTURES/Icon_Events.PNG)
 
 ![WPF_1_Osszeado.xaml.cs_Events](PICTURES/WPF_1_Osszeado.xaml.cs_Events.PNG)
 
