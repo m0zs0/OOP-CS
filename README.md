@@ -13,8 +13,8 @@
   - internal
 ## 2. Állatok
 - static mező haználata (*)
-- Paraméteres konstruktor (**)
-- ToString újradefiniálása
+- Paraméteres konstruktor, destruktor (**)
+- ToString újradefiniálása override
 - Ellenőrzött adatbevitel billentyűzetről - Kivételkezelés
 - Programozási tételek
   - Keresés (null + foreach + break)
