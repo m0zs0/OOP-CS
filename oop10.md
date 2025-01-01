@@ -48,6 +48,7 @@ MainWindox.xaml
 </Window>
 ```
 Vezérlők felhelyezése az ablakra (egyenlőre csak az illesztési segédvonalak használatával)
+
 Az XAML kis-nagybetű érzékeny, mert minden vezérlő elem neve vagy egy attribútum neve egy .NET keretrendszerben definiált típushoz van hozzárendelve. 
 
 ![WPF_1_Osszeado.xaml](PICTURES/WPF_1_Osszeado.xaml.PNG)
