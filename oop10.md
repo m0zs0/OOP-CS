@@ -22,7 +22,9 @@
 
 
 New Project/WPF Application
+
 -View/Toolbox
+
 -View/Properties
 
 ## Szerkezet (vezérlők):
