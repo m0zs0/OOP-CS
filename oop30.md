@@ -176,4 +176,4 @@ Validity: Állítsd be a kulcs érvényességi idejét években.
 Full name, organization unit, organization, city or locality, state or province, and country code: Add meg a szükséges információkat.
 Miután létrehoztad az aláírási identitást, a Visual Studio létrehozza az aláírt APK fájlt, amelyet letölthetsz és telepíthetsz az Android eszközödre
 
-
+[https://drive.google.com/file/d/1XTKDbmRlp2-rMhWejWcsMuzhkAnVo8Ke/view?usp=sharing](https://drive.google.com/file/d/1XTKDbmRlp2-rMhWejWcsMuzhkAnVo8Ke/view?usp=sharing)
