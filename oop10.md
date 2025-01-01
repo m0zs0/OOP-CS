@@ -1,13 +1,21 @@
 # 10. Modul Windows Presentation Foundation
-https://www.visualstudio.com/vs/community/
-GUI framework, ami lehetővé teszi grafikus alkalmazások készítését GUI elemek széles skáláját felhasználva
-WPF <> WinForm
-WPF = XAML (markup) + XAML.CS kombinációja
-XAML = eXtensible Application Markup Language. Ez egy jelölőnyelv, amelyet a felhasználói felület (UI) leírására használnak. XAML segítségével meghatározhatod az ablakok, gombok, szövegdobozok és egyéb vizuális elemek elrendezését és megjelenését
-XAML.CS = Ez a háttérkód, amely az interakciókat, a logikát és a funkcionalitást biztosítja. A C# kód felelős az események kezeléséért, az adatok feldolgozásáért és az alkalmazás működéséért.
-Minden egy szerkezetleírás: X.xaml és egy eseménykezelő: X.xaml.cs párosból áll.
 
-Feladat: Készíts egyszerű számológépet egyenlőre csak összeadás legyen
+-https://www.visualstudio.com/vs/community/
+
+-GUI framework, ami lehetővé teszi grafikus alkalmazások készítését GUI elemek széles skáláját felhasználva
+
+-WPF <> WinForm
+
+-WPF = XAML (markup) + XAML.CS kombinációja
+
+-XAML = eXtensible Application Markup Language. Ez egy jelölőnyelv, amelyet a felhasználói felület (UI) leírására használnak. XAML segítségével meghatározhatod az ablakok, gombok, szövegdobozok és egyéb vizuális elemek elrendezését és megjelenését
+
+-XAML.CS = Ez a háttérkód, amely az interakciókat, a logikát és a funkcionalitást biztosítja. A C# kód felelős az események kezeléséért, az adatok feldolgozásáért és az alkalmazás működéséért.
+
+-Minden egy szerkezetleírás: X.xaml és egy eseménykezelő: X.xaml.cs párosból áll.
+
+
+**Feladat: Készíts egyszerű számológépet egyenlőre csak összeadás legyen**
 
 [WPF_1_Osszeado](PICTURES/WPF_1_Osszeado.PNG)
 
