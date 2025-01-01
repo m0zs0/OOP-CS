@@ -215,7 +215,9 @@ AddButton
 
 2. lépés
 Kattintsunk a Properties ablakban az Events ikont
+
 ![WPF_1_Osszeado.xaml.cs_Events](PICTURES/WPF_1_Osszeado.xaml.cs_Events.PNG)
+
 A Button-on állva kattintsunk a Click eseménybe 2x (egyébként ha a vezérlőn 2x kattintunk-akár véletlenül- akkor a default eventhandler -rel automatikusan a cs-be lép!)
 
 ```c#
