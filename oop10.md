@@ -381,4 +381,155 @@ private void RemovePlaceholder(TextBox textBox, string placeholderText)
 }
 ```
 
+<details>
+<summary>Nyiss le a végleges MainWindox.xaml forrásáért!</summary>
+
+### `MainWindox.xaml` példa:
+```c#
+<Window x:Class="WPF_1_Osszeado.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_1_Osszeado"
+        mc:Ignorable="d"
+        Title="Összeadó" Height="400" Width="400">
+    <Grid>
+        <Label HorizontalAlignment="Left" Margin="110,76,0,0" VerticalAlignment="Top">
+            <Label.FontWeight>Bold</Label.FontWeight>
+            <Label.Content>a</Label.Content>
+        </Label>
+        <Label Content="b" HorizontalAlignment="Left" Margin="110,131,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="a+b" HorizontalAlignment="Left" Margin="102,260,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="InputATextBox" HorizontalAlignment="Left" Margin="190,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Padding="5,5,5,5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+        <TextBox x:Name="InputBTextBox" HorizontalAlignment="Left" Margin="190,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Padding="5,5,5,5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+        <Button x:Name="AddButton" Margin="0,192,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Padding="10,5,10,5" BorderThickness="0,0,0,0" Click="AddButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Content>
+                <WrapPanel>
+                    <TextBlock Foreground="Blue">a</TextBlock>
+                    <TextBlock Foreground="Red">+</TextBlock>
+                    <TextBlock Foreground="Blue">b</TextBlock>
+                    <TextBlock>=</TextBlock>
+                </WrapPanel>
+            </Button.Content>
+        </Button>
+
+        <TextBlock x:Name="OutputCTextBlock" HorizontalAlignment="Left" Margin="190,260,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Padding="5,5,5,5" Width="120"/>
+
+    </Grid>
+</Window>
+
+```
+</details>
+
+<details>
+<summary>Nyiss le a végleges MainWindox.xaml.cs forrásáért!</summary>
+
+### `MainWindox.xaml.cs` példa:
+```c#
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WPF_1_Osszeado
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            InitializePlaceholders();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int a = int.Parse(InputATextBox.Text);
+                int b = int.Parse(InputBTextBox.Text);
+                int c = a + b;
+                OutputCTextBlock.Text = c.ToString();
+            }
+            catch
+            {
+                OutputCTextBlock.Foreground = Brushes.Red;
+                OutputCTextBlock.Text = "Hiba";
+                MessageBox.Show("Kérlek, érvényes számokat adj meg!");
+                OutputCTextBlock.Foreground = Brushes.Black;
+                OutputCTextBlock.Text = "0";
+            }
+        }
+        private void InitializePlaceholders()
+        {
+            SetPlaceholder(InputATextBox, "Kérem a számot!");
+            SetPlaceholder(InputBTextBox, "Kérem a számot!");
+        }
+
+        private void SetPlaceholder(TextBox textBox, string placeholderText)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = placeholderText;
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void InputATextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "Kérem a számot!")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+
+        private void InputATextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            SetPlaceholder(textBox, "Kérem a számot!");
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                RemovePlaceholder(textBox, "Kérem a számot!");
+            }
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                SetPlaceholder(textBox, "Kérem a számot!");
+            }
+        }
+
+        private void RemovePlaceholder(TextBox textBox, string placeholderText)
+        {
+            if (textBox.Text == placeholderText)
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+    }
+}
+
+```
+</details>
 
