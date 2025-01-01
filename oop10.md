@@ -69,8 +69,11 @@ Vezérlő szélessége és magassága (métékegység eszközpont)
 `<Label></Label>` vagy `<Label />`
 
 A Label contentjének megadásának 4 módszere:
+
 `<Label>a</Label>`
+
 `<Label Content="a" />`
+
 ```c#
 <Label>
     <Label.FontWeight>Bold</Label.FontWeight>
