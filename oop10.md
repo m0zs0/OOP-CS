@@ -290,7 +290,7 @@ private void SetPlaceholder(TextBox textBox, string placeholderText){
 
 Gondolva arra, hogy az inicializálás után is kell Placeholdert beállítani a fentebb említett logika alapján, így magát a beállítást külön függvénybe költöztetjük.
 
-Így futtatva már már megjelenik szürkével a "Kérem a számot!" felirat, de ugyanúgy törülni kell, ha számot akarunk beírni, mint eddig.
+Így futtatva már már megjelenik szürkével a "Kérem a számot!" felirat, de ugyanúgy törölni kell, ha számot akarunk beírni, mint eddig.
 A megoldás az lesz, hogy ha rákattintanak (fókuszba kerül: GotFocus) akkor az történjen, hogy 
 
 ha még a placeholder szövegünk volt a tartalom, akkor legyen üres és írjon feketével, különben csak simán lehessen szerkeszteni a tartalmat. 
