@@ -80,12 +80,13 @@ A Label contentjének megadásának 4 módszere:
     <Label.Content>a</Label.Content>
 </Label>
 ```
-Fontosabb Property-k
->Properties/Text/Bold
-Felirat félkövér
 
 >Properties/Common/Content
 Elem felirata
+
+**Fontosabb egyéb Property-k:**
+>Properties/Text/Bold
+Felirat félkövér
 
 >Properties/Layout/Margin:
 HorizontalAlignment és a VerticalAlignment beállításától függően az elem helyét adja
