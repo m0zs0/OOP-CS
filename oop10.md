@@ -208,9 +208,13 @@ Azt szeretnénk, ha rákattintanak a Button-ra, akkor
 1. lépés
 
 Szükséges vezérlők egyedi `Name` tulajdonságainak beállítása
+
 Válaszd ki a vezérlőt és a Properties/Name mezőjébe írd be a következőket (PascalCase írásmód, legyen benne a vezérlő típusa is!):
+
 InputATextBox, InputBTextBox, OutputCTextBlock 
-Most ugyan csak egy Button-unk van, de nevezzük el azt is
+
+Most ugyan csak egy Button-unk van, de nevezzük el azt is:
+
 AddButton 
 
 2. lépés
@@ -251,6 +255,7 @@ private void AddButton_Click(object sender, RoutedEventArgs e){
 ```
 
 Ahol a `catch` ágban az történik, hogy az eredmény helyére pirosan kiírjuk a "Hiba" szöveget, és megjelenítünk egy modális ablakot<span style="text-decoration: underline" title="Amikor egy modális ablak megjelenik, az blokkolja a felhasználói interakciókat az alkalmazás többi részével, amíg a felhasználó nem reagál valamit (most: nem zárja be a MessageBox-ot). Ez a modális viselkedés biztosítja, hogy a felhasználó először a MessageBox-ban megjelenő üzenetre reagáljon, mielőtt folytathatná az alkalmazás használatát.">🔍</span>.
+
 Ezután visszaállítjuk a kiinduló állapotot az eredményjelzőben.
 
 ![WPF_1_Osszeado_hiba](PICTURES/WPF_1_Osszeado_hiba.PNG)
@@ -263,7 +268,9 @@ Lenne még egy dolog, ami kényelmetlen, mégpedig az, hogy a TextBox-oknak a Te
 Az OutputCTextBlock/Common/Text értékét állítsuk "0"-ra.
 
 A InputATextBox és InputBTextBox /Common/Text értékét állítsuk "Kérem a számot!"-ra, ezt azonban egy külön függvénnyel oldjuk meg. Csak azért, hogy lássunk példát arra, hogy hogyan lehet kódból inicializálni.
+
 Mielőtt ennek nekiállunk a két TextBox/Common/Text értékét töröljük ki.
+
 
 ```c#
 public MainWindow(){
