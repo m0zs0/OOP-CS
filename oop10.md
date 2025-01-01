@@ -21,7 +21,7 @@
 
 
 
-New Project/WPF Application
+New Project/WPF Application (WPF_1_Osszeado)
 
 -View/Toolbox
 
@@ -31,7 +31,7 @@ New Project/WPF Application
 
 MainWindox.xaml
 
-*namespace: WPF_1_Osszeado!*
+*namespace: WPF_1_Osszeado*!
 
 ```c#
 <Window x:Class="WPF_1_Osszeado.MainWindow"
