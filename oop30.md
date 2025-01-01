@@ -1,13 +1,16 @@
 # Mobilalkalmazásfejlesztés
 
 <details>
-    Használt REST API
+<summary>Használt REST API</summary>
+
+```
 https://zip-api.eu/api/v1/info/HU-5310
 {"country_code":"HU","postal_code":"5310","state":"J\u00e1sz-Nagykun-Szolnok","place_name":"Kis\u00fajsz\u00e1ll\u00e1s","lat":"47.21670000","lng":"20.76670000"}
 
 https://zip-api.eu/api/v1/codes/place_name=HU-Kisújszállás
 
 {"country_code":"HU","state":"J\u00e1sz-Nagykun-Szolnok","place_name":"Kis\u00fajsz\u00e1ll\u00e1s","postal_code":"5310","lat":"47.21670000","lng":"20.76670000"}
+```
 </details>
 
 
