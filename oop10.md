@@ -54,7 +54,8 @@ Az XAML kis-nagybetű érzékeny, mert minden vezérlő elem neve vagy egy attri
 ![WPF_1_Osszeado.xaml](PICTURES/WPF_1_Osszeado.xaml.PNG)
 
 
--Window
+-`Window`
+
 XAML-ben:
 `Title="Összeadó"`
 vagy 
@@ -63,7 +64,7 @@ vagy
 >Properties/Layout/Width|Height
 Vezérlő szélessége és magassága (métékegység eszközpont)
 
--Label: szöveg megjelenítése űrlapon, target-je van, van speciális eseménye
+-`Label`: szöveg megjelenítése űrlapon, target-je van, van speciális eseménye
 
 `<Label></Label>` vagy `<Label />`
 
