@@ -257,7 +257,8 @@ Ezután visszaállítjuk a kiinduló állapotot az eredményjelzőben.
 
 
 Lenne még egy dolog, ami kényelmetlen, mégpedig az, hogy a TextBox-oknak a Text tulajdonsága tartalmaz egy default "TextBox" szöveget, amit beírás előtt törölni kell.
-Úgy lenne jó megírni, hogy ameddig nem katintanak bele, addig Placeholder-ként viselkedne, majd belekattintás után eltűnne a placeholder szöveg ("Kérem a számot!"), amikor kikattintunk belőle, akkor ha üres maradt, akkor placeholder maradjon, egyébként pedig maradjon a beírt tartalom.
+
+Úgy lenne jó megírni, hogy ameddig nem kattintanak bele, addig Placeholder-ként viselkedne, majd belekattintás után eltűnne a placeholder szöveg ("Kérem a számot!"), amikor kikattintunk belőle, akkor ha üres maradt, akkor placeholder maradjon, egyébként pedig maradjon a beírt tartalom.
 
 Az OutputCTextBlock/Common/Text értékét állítsuk "0"-ra.
 
