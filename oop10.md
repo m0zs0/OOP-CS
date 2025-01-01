@@ -1,4 +1,4 @@
-# 10. Modul Windows Presentation Foundation
+# 10. Modul Összeadó készítése (Windows Presentation Foundation)
 
 -https://www.visualstudio.com/vs/community/
 
@@ -17,7 +17,7 @@
 
 **Feladat: Készíts egyszerű számológépet egyenlőre csak összeadás legyen**
 
-[WPF_1_Osszeado](PICTURES/WPF_1_Osszeado.PNG)
+![WPF_1_Osszeado](PICTURES/WPF_1_Osszeado.PNG)
 
 
 
@@ -48,7 +48,7 @@ MainWindox.xaml
 Vezérlők felhelyezése az ablakra (egyenlőre csak az illesztési segédvonalak használatával)
 Az XAML kis-nagybetű érzékeny, mert minden vezérlő elem neve vagy egy attribútum neve egy .NET keretrendszerben definiált típushoz van hozzárendelve. 
 
-[WPF_1_Osszeado.xaml](PICTURES/WPF_1_Osszeado.xaml.PNG)
+![WPF_1_Osszeado.xaml](PICTURES/WPF_1_Osszeado.xaml.PNG)
 
 
 -Window
@@ -163,7 +163,7 @@ Keret
 
 ## Eseménykezelés (events)
 
-[WPF_1_Osszeado.xaml.cs](PICTURES/WPF_1_Osszeado.xaml.cs.PNG)
+![WPF_1_Osszeado.xaml.cs](PICTURES/WPF_1_Osszeado.xaml.cs.PNG)
 
 MainWindox.xaml.cs
 ```c#
@@ -208,7 +208,7 @@ AddButton
 
 2. lépés
 Kattintsunk a Properties ablakban az Events ikont
-[WPF_1_Osszeado.xaml.cs_Events](PICTURES/WPF_1_Osszeado.xaml.cs_Events.PNG)
+![WPF_1_Osszeado.xaml.cs_Events](PICTURES/WPF_1_Osszeado.xaml.cs_Events.PNG)
 A Button-on állva kattintsunk a Click eseménybe 2x (egyébként ha a vezérlőn 2x kattintunk-akár véletlenül- akkor a default eventhandler -rel automatikusan a cs-be lép!)
 
 ```c#
@@ -244,7 +244,7 @@ private void AddButton_Click(object sender, RoutedEventArgs e){
 Ahol a `catch` ágban az történik, hogy az eredmény helyére pirosan kiírjuk a "Hiba" szöveget, és megjelenítünk egy modális ablakot<span style="text-decoration: underline" title="Amikor egy modális ablak megjelenik, az blokkolja a felhasználói interakciókat az alkalmazás többi részével, amíg a felhasználó nem reagál valamit (most: nem zárja be a MessageBox-ot). Ez a modális viselkedés biztosítja, hogy a felhasználó először a MessageBox-ban megjelenő üzenetre reagáljon, mielőtt folytathatná az alkalmazás használatát.">🔍</span>.
 Ezután visszaállítjuk a kiinduló állapotot az eredményjelzőben.
 
-[WPF_1_Osszeado_hiba](PICTURES/WPF_1_Osszeado_hiba.PNG)
+![WPF_1_Osszeado_hiba](PICTURES/WPF_1_Osszeado_hiba.PNG)
 
 
 Lenne még egy dolog, ami kényelmetlen, mégpedig az, hogy a TextBox-oknak a Text tulajdonsága tartalmaz egy default "TextBox" szöveget, amit beírás előtt törölni kell.
