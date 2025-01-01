@@ -15,7 +15,7 @@
 -Minden egy szerkezetleírás: X.xaml és egy eseménykezelő: X.xaml.cs párosból áll.
 
 
-# Feladat: Készíts egyszerű számológépet egyenlőre csak összeadás legyen
+# Feladat: egyszerű összeadó gép
 
 ![WPF_1_Osszeado](PICTURES/WPF_1_Osszeado.PNG)
 
