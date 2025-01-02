@@ -24,4 +24,4 @@
 - Programozási tételek
   - Keresés (null + foreach + break)
   - Kiválogatás
-  - MAximumkiválasztás (* + **)
+  - Maximumkiválasztás (* + **)
