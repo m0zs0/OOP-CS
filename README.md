@@ -76,6 +76,6 @@
     - Listába
 </details>
 <details>
-<summary>7. Autók_2 Esettanulmány</summary>
+<summary>7. Autók_3 LINQ</summary>
 
 - Osztály
