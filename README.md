@@ -141,3 +141,10 @@
     - if (sender is TextBox textbox) ...
 </details>
 
+## Windows Presentation Foundation I.
+
+<details>
+<summary>1. Összeadó</summary>
+
+- XAML
+</details>
