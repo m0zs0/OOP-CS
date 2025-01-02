@@ -1,4 +1,4 @@
-# ObjektumOrientált Programozás
+# ObjektumOrientált Programozás I.
 
 <details>
 <summary>1. Osztály tagjai</summary>
@@ -103,8 +103,11 @@
 - Program.cs
 - UnitTest1.cs
 </details>
+
+# WPF I.
+
 <details>
-<summary>9. BasicCalculator + Tesztelés</summary>
+<summary>1. Összeadó</summary>
 
 - Calculator.cs
 
