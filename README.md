@@ -1,4 +1,4 @@
-# ObjektumOrientált Programozás I.
+## ObjektumOrientált Programozás I.
 
 <details>
 <summary>1. Osztály tagjai</summary>
@@ -104,7 +104,7 @@
 - UnitTest1.cs
 </details>
 
-# WPF I.
+## Windows Presentation Foundation I.
 
 <details>
 <summary>1. Összeadó</summary>
