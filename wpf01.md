@@ -1,4 +1,4 @@
-# 10. Modul Összeadó készítése (Windows Presentation Foundation)
+# 1. Modul Összeadó készítése (Windows Presentation Foundation)
 
 -https://www.visualstudio.com/vs/community/
 
