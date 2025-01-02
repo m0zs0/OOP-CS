@@ -17,7 +17,7 @@
 <details>
 <summary>2. Állatok</summary>
 
-  - static mező haználata (*)
+- static mező haználata (*)
 - Paraméteres konstruktor, destruktor (**)
 - ToString újradefiniálása override
 - Ellenőrzött adatbevitel billentyűzetről - Kivételkezelés
