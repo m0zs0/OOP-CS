@@ -109,6 +109,35 @@
 <details>
 <summary>1. Összeadó</summary>
 
-- Calculator.cs
+- XAML
+  - Window
+  - Label
+  - TextBox
+  - TextBlock
+  - Button
+  - WrapPanel
+  - Properties
+    - Name
+    - Title
+    - Content
+    - Text
+      - Bold
+      - TextWrapping
+    - Layout
+      - Margin
+      - Padding
+      - Alignment
+    - Appearance
+      - Border - Thickness
+      - Effect
+- XAML.cs
+  - Brushes
+  - X.Foreground
+  - Events
+    - Click
+    - GotFocus
+    - LostFocus
+    - TextBox textbox = (TextBox) sender
+    - if (sender is TextBox textbox) ...
+</details>
 
-- 
