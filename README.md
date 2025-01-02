@@ -2,6 +2,7 @@
 
 <details>
 <summary>1. Osztály tagjai</summary>
+
 - Deklaráció
 - Példányszintű tagok
   - mező
