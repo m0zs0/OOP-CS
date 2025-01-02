@@ -1,6 +1,7 @@
 # ObjektumOrientált Programozás
 
-## 1. Osztály tagjai
+<details>
+<summary>1. Osztály tagjai</summary>
 - Deklaráció
 - Példányszintű tagok
   - mező
@@ -11,7 +12,8 @@
   - public
   - protected
   - internal
-## 2. Állatok
+</details>
+  ## 2. Állatok
 - static mező haználata (*)
 - Paraméteres konstruktor, destruktor (**)
 - ToString újradefiniálása override
