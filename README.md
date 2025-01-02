@@ -43,7 +43,39 @@
 
 - C# accessor-ok: getter és szetter metódusok
 - Tulajdonságok
-- lambda operátor
-- validációs feltétel
-- automatikus tulajdonság
-- 
+- Lambda operátor
+- Validációs feltétel
+- Automatikus tulajdonság
+</details>
+<details>
+<summary>5. Paraméterátadás</summary>
+
+- Érték szerinti paraméterátadás
+  - érték típusú változók
+  - referencia típusú változók
+- Cím szerinti paraméterátadás
+</details>
+<details>
+<summary>6. Autók_2 Esettanulmány</summary>
+
+- Osztály
+  - Tulajdonságok
+  - Validációs feltétel -> kivételkezelés
+  - Konstruktor
+  - ToString
+- Beolvasás file-ból
+  - Kivételkezelés
+- Objektumlista
+- Programozási tételek (+ LINQ bevezetés)
+  - Átlag
+  - Maximumkiválasztás
+  - Keresés (null + foreach + break)
+  - Rendezés
+  - Kiválogatás
+    - Szótárba
+    - Listába
+</details>
+<details>
+<summary>7. Autók_2 Esettanulmány</summary>
+
+- Osztály
