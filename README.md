@@ -78,4 +78,34 @@
 <details>
 <summary>7. Autók_3 LINQ</summary>
 
-- Osztály
+- delegate: névtelen függvény
+- lambda kifejezés
+- IEnumerable<T> és List<T>
+- Aggregáló függvények
+- Szűrő és rendező függvények
+- Generikus Típusok és Metódusok
+- List<T> Specifikus Metódusok
+- Láncolás (method chaining)
+</details>
+<details>
+<summary>8. Összefoglalás</summary>
+
+- Elméleti kérdések
+- Nasa 1995
+- Lézerlövészet
+- Témazáró A - Könyvtár
+- Témazáró B - Subtitle
+</details>
+<details>
+<summary>9. BasicCalculator + Tesztelés</summary>
+
+- Calculator.cs
+- Program.cs
+- UnitTest1.cs
+</details>
+<details>
+<summary>9. BasicCalculator + Tesztelés</summary>
+
+- Calculator.cs
+
+- 
