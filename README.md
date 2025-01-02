@@ -5,13 +5,9 @@
 
 - Deklaráció
 - Példányszintű tagok
-
   - mező
-  
   - metódus
- 
 - Osztályszintű tagok (static)
-
 - Osztály tagjainak elérése
   
   - private
