@@ -2,7 +2,6 @@
 
 <details>
 <summary>1. Osztály tagjai</summary>
-```
 - Deklaráció
   
 - Példányszintű tagok
@@ -22,7 +21,6 @@
   - protected
     
   - internal
-```
 </details>
   ## 2. Állatok
 - static mező haználata (*)
