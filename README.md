@@ -141,10 +141,12 @@
     - if (sender is TextBox textbox) ...
 </details>
 
-## Windows Presentation Foundation I.
+## Multi-platform App UI development I.
 
 <details>
-<summary>1. Összeadó</summary>
+<summary>1. cityzip</summary>
 
 - XAML
+- XAML.cs
+- APK készítés
 </details>
