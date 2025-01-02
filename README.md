@@ -2,20 +2,15 @@
 
 <details>
 <summary>1. Osztály tagjai</summary>
-
 - Deklaráció
 - Példányszintű tagok
   - mező
   - metódus
 - Osztályszintű tagok (static)
 - Osztály tagjainak elérése
-  
   - private
-    
   - public
-    
   - protected
-    
   - internal
 </details>
   ## 2. Állatok
