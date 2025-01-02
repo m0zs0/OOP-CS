@@ -14,8 +14,10 @@
   - protected
   - internal
 </details>
-  ## 2. Állatok
-- static mező haználata (*)
+<details>
+<summary>2. Állatok</summary>
+
+  - static mező haználata (*)
 - Paraméteres konstruktor, destruktor (**)
 - ToString újradefiniálása override
 - Ellenőrzött adatbevitel billentyűzetről - Kivételkezelés
