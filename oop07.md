@@ -138,7 +138,6 @@ string elsoSzo = GetFirstElement(szavak);
 
 Ebben a példában a GetFirstElement metódus generikus, és bármilyen típusú listával használható.
 
-
 `OrderBy`: Rendez egy gyűjteményt egy adott kulcs alapján.
 ```c#
 IOrderedEnumerable<Auto> rendezettAutok = autok.OrderBy(auto => auto.Evjarat);
@@ -184,6 +183,117 @@ IEnumerable<Auto> elsoKetAuto = autok.Take(2);
 ```c#
 IEnumerable<Auto> kettoUtan = autok.Skip(2);
 ```
+
+<details>
+<summary>Nyiss le néhány linq utasítás forrásáért!</summary>
+
+### `Program.cs` példa:
+```c#
+
+List<Diak> diakok = Beolvas<Diak>("diakok.txt");
+List<Auto> autok = Beolvas<Auto>("autok.csv");
+
+//Aggregátor függvények:
+Console.WriteLine($"Autok száma: {autok.Count}");
+Console.WriteLine($"Autók átlagéletkora: {autok.Average(auto => DateTime.Now.Year - auto.Evjarat):f2}");
+Console.WriteLine($"Legtöbbet futott autó km-e: {autok.Max(auto => auto.FutottKm)} km");
+Console.WriteLine($"Legtöbbet futott autó rendszáma: {(autok.MaxBy(auto => auto.FutottKm)).Rendszam}");
+Console.WriteLine($"Diákok száma: {diakok.Count}");
+Console.WriteLine($"Diákok átlagéletkora: {diakok.Average(diak => DateTime.Now.Year - diak.SzuletesDatuma.Year)}"  );
+Console.WriteLine($"Legfiatalabb diák életkora: {diakok.Min(diak => DateTime.Now.Year - diak.SzuletesDatuma.Year)}");
+Console.WriteLine($"Legfiatalabb diák neve: {diakok.MaxBy(diak => diak.SzuletesDatuma).Nev}");
+
+//Szűrő és rendező függvények
+IEnumerable<Auto> BMWk = autok.Where(auto => auto.Marka == "BMW");
+Console.WriteLine($"BMW-k darabszáma: {BMWk.Count()}");
+Console.WriteLine(  $"BMW-k átlagéletkora: {BMWk.Average(auto => DateTime.Now.Year - auto.Evjarat):f2}");
+
+IEnumerable<Auto> evjaratSzerintRendezettAutok = autok.OrderBy(auto => auto.Evjarat);
+foreach (Auto auto in evjaratSzerintRendezettAutok) { 
+    Console.WriteLine(auto);
+}
+IEnumerable<Auto> evjaratSzerintCsokkenobeRendezettAutok = autok.OrderByDescending(auto => auto.Evjarat);
+
+IEnumerable<int> futottKmLista = autok.Select(auto => auto.FutottKm);
+Console.WriteLine(  futottKmLista.ToList().Sum());
+
+IEnumerable<IGrouping<string, Auto>> markaCsoportok = autok.GroupBy(auto => auto.Marka);
+foreach (IGrouping<string, Auto> csoport in markaCsoportok) {
+    Console.WriteLine($"Márka: {csoport.Key}");
+    foreach (Auto auto in csoport)
+    {
+        Console.WriteLine(auto);
+    }
+}
+
+
+Console.WriteLine("Vége");
+
+static List<T> Beolvas<T>(string fajl)
+{
+    List<T> l = new List<T>();
+    try
+    {
+        using (StreamReader sr = new StreamReader(fajl)) { 
+            string sor;
+            while ((sor = sr.ReadLine()) != null)
+            {
+                l.Add((T)Activator.CreateInstance(typeof(T), sor));
+            }
+        }
+    }
+
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+    
+    return l;
+}
+
+public class Diak
+{
+    public Diak(string sor)
+    {
+        string[] seged = sor.Split(',');
+        Nev = seged[0];
+        SzuletesDatuma = Convert.ToDateTime(seged[1]);
+        Eredmeny = Convert.ToInt32(seged[2]);
+    }
+
+    public string Nev { get; set; }
+    public DateTime SzuletesDatuma { get; set; }
+    public int Eredmeny { get; set; }
+}
+
+public class Auto
+{
+    public Auto(string sor)
+    {
+        string[] seged = sor.Split(',');
+        Rendszam = seged[0];
+        Marka = seged[1];
+        Tipus = seged[2];
+        Evjarat = Convert.ToInt32(seged[3]);
+        FutottKm = Convert.ToInt32(seged[4]);
+        
+
+    }
+
+    public string Rendszam { get; set; }
+    public string Marka { get; set; }
+    public string Tipus { get; set; }
+    public int FutottKm { get; set; }
+    public int Evjarat { get; set; }
+
+    public override string? ToString()
+    {
+        return $"  Rendszám: {this.Rendszam}, Márka: {this.Marka}, Típus: {this.Tipus}, Futott km: {this.FutottKm}, Évjárat: {this.Evjarat}"; 
+    }
+}
+
+```
+</details>
 
 ## `List<T>` Specifikus Metódusok
 
