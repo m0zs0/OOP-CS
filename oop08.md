@@ -20,6 +20,27 @@
 17. Mit jelent a paraméteres konstruktor és mikor használjuk?
 18. Hogyan lehet felüldefiniálni a ToString() metódust egy osztályban?
 
+19. Mi a LINQ és mik az előnyei?
+20. Mi az a delegate?
+21. Mi az a névtelen függvény (anonymous method)?
+22. Mi az a lambda kifejezés és hogyan használható LINQ lekérdezésekben!
+23. Mit jelent az a kifejezés, hogy "aggregáló függvény"?
+24. Mit jelent az IEnumerable<T>?
+25. Mi az a generikus osztály és milyen előnyökkel jár a használata?
+26. Mit ír ki az alábbi program?
+```c#
+public static T GetMax<T>(T a, T b) where T : IComparable<T>
+{
+    return a.CompareTo(b) > 0 ? a : b;
+}
+
+int maxInt = GetMax<int>(3, 5);
+Console.WriteLine(maxInt)
+string maxString = GetMax<string>("apple", "orange");
+Console.WriteLine(maxString)
+```
+
+
 ## NASA 1995
 
 - [NASA.pdf megnyitása](NASA/NASA.pdf)
