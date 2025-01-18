@@ -299,19 +299,19 @@ public class Auto
 
 `Add`: Egy elemet ad a lista végéhez.
 ```c#
-autok.Add(new Auto { FutottKm = 30000, Evjarat = 2021 });
+autok.Add(new Auto ( FutottKm = 30000, Evjarat = 2021 ));
 ```
 `AddRange`: Több elemet ad a lista végéhez.
 ```c#
-autok.AddRange(new List<Auto> { new Auto { FutottKm = 25000, Evjarat = 2019 }, new Auto { FutottKm = 18000, Evjarat = 2020 } });
+autok.AddRange(new List<Auto> { new Auto ( FutottKm = 25000, Evjarat = 2019 ), new Auto ( FutottKm = 18000, Evjarat = 2020 ) });
 ```
 `Insert`: Egy elemet szúr be a lista adott pozíciójára.
 ```c#
-autok.Insert(1, new Auto { FutottKm = 22000, Evjarat = 2016 });
+autok.Insert(1, new Auto ( FutottKm = 22000, Evjarat = 2016 ));
 ```
 `InsertRange`: Több elemet szúr be a lista adott pozíciójára.
 ```c#
-autok.InsertRange(1, new List<Auto> { new Auto { FutottKm = 21000, Evjarat = 2017 }, new Auto { FutottKm = 23000, Evjarat = 2018 } });
+autok.InsertRange(1, new List<Auto> { new Auto ( FutottKm = 21000, Evjarat = 2017 ), new Auto ( FutottKm = 23000, Evjarat = 2018 ) });
 ```
 `Remove`: Eltávolítja az első előfordulását egy adott elemnek a listából.
 ```c#
