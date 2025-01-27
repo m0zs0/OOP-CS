@@ -94,7 +94,7 @@ namespace Wpf_1_TetrisDesigner1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
+            Button button = sender as Button;
 	    if (button != null){
                 button.Background = isBlack ? Brushes.LightGray : Brushes.Black;
                 isBlack = !isBlack;
