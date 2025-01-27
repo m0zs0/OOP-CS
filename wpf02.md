@@ -45,8 +45,35 @@ Működés: Minden Button-ra kattintáskor színváltás alapszín és fekete k�
 ```
 
 6. Felveszünk az osztályban egy isBlack változót, ami azt tárolja, hogy a gomb jelenleg fekete színű-e.
-7. A Button_Click metódus-ban meg kell állapítani, hogy melyik gombon történt a kattintás, ezt az object típusú sender paraméter tartalmazza. Tehát megszerezzük a sender-ből a Buttont. 
-Button button = sender as Button. (ehelyett a Button button = (Button) sender is jó lenne)
+7. A Button_Click metódus-ban meg kell állapítani, hogy melyik gombon történt a kattintás, ezt az object típusú sender paraméter tartalmazza. Az object típus lehetővé teszi, hogy bármilyen típusú objektumot átadjunk az eseménykezelőnek, mert minden típus az object típusból származik, így az object típusú referencia bármilyen típusú objektumra mutathat. Az eseménykezelőn belül típuskonverziót végzünk a sender paraméteren, hogy a konkrét típusú objektumhoz férjünk hozzá. Például, ha a sender egy gomb, akkor Button típusra konvertáljuk, hogy a gomb tulajdonságait módosíthassuk. Erre 3 mód létezik: 
+- 1: is operátor: ellenőrízzük, hogy a sender egy adott típusú objektum-e. Ez a legbiztonságosabb módszer.
+```c#
+if (sender is Button button)
+    {
+        button.Background = Brushes.Black;
+    }
+```
+- 2: as operátor: biztonságosan próbálhatjuk meg konvertálni a sender-t egy adott típusra. Ha a konverzió sikertelen, akkor a eredmény null lesz.
+```c#
+Button button = sender as Button;
+    if (button != null)
+    {
+        button.Background = Brushes.Black;
+    }
+```
+- 3: Castolás: Sikertelenség esetén egy `InvalidCastException` kivétel dobódik és ezt kapjuk el.
+```c#
+try
+    {
+        Button buttonCast = (Button)sender;
+        buttonCast.Background = Brushes.Green;
+    }
+    catch (InvalidCastException)
+    {
+        // Kezeljük a hibát, ha a konverzió sikertelen volt
+        MessageBox.Show("A sender nem Button típusú!");
+    }
+```
 8. Ha sikerül Button típusként azonosítani a sender-t, akkor a button.Background tulajdonsággal beállítjuk a Button háttérszínét, és az isBlack változó értékét megfordítjuk.
 
 ```c#
