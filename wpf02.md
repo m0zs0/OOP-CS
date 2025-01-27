@@ -4,7 +4,7 @@
 
 Projekt neve: **Wpf_1_TetrisDesigner1**
 
-Projekt leírása: hozz létre, egy 3x3-as Grid minden cellájába egy-egy (összesen 9db) feliret nélküli, strech-elt Button elhelyezése
+Projekt leírása: hozz létre egy 3x3-as Grid-et, aminek minden cellájába egy-egy (összesen 9db) felirat nélküli, strech-elt Button-t helyezz el
 
 Működés: Minden Button-ra kattintáskor színváltás alapszín és fekete között
 
