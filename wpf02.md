@@ -1,16 +1,18 @@
 # Grid: TetrisDesigner v1
 
-##Feladat:
+## Feladat:
 
-Projekt neve: *Wpf_1_TetrisDesigner1*
+Projekt neve: **Wpf_1_TetrisDesigner1**
+
 Projekt leírása: hozz létre, egy 3x3-as Grid minden cellájába egy-egy (összesen 9db) feliret nélküli, strech-elt Button elhelyezése
+
 Működés: Minden Button-ra kattintáskor színváltás alapszín és fekete között
 
-0. Window méretét beállítjuk 600x600-asra
-1. Grid: A Grid-et 3x3-asra osztjuk, hogy a Button-ok egyenletesen elhelyezkedjenek.
-2. Button-ok: Minden Button-t elhelyeztünk a megfelelő cella (Row, Column) pozícióba. 
-3. A buttonok property-jében beállítjuk a strech-elést mindkét irányban (margin 0) és a "Name"-t beállítjuk a cella pozíciójának megfelelően
-4. A Click eseményre a  "Button_Click" eseménykezelőt állítjuk be minden Buttonra
+1. Window méretét beállítjuk 600x600-asra
+2. Grid: A Grid-et 3x3-asra osztjuk, hogy a Button-ok egyenletesen elhelyezkedjenek.
+3. Button-ok: Minden Button-t elhelyeztünk a megfelelő cella (Row, Column) pozícióba. 
+4. A buttonok property-jében beállítjuk a strech-elést mindkét irányban (margin 0) és a "Name"-t beállítjuk a cella pozíciójának megfelelően
+5. A Click eseményre a  "Button_Click" eseménykezelőt állítjuk be minden Buttonra
 
 ```c#
 <Window x:Class="Wpf_1_TetrisDesigner1.MainWindow"
@@ -42,10 +44,10 @@ Működés: Minden Button-ra kattintáskor színváltás alapszín és fekete k�
 </Window>
 ```
 
-5. Felveszünk az osztályban egy isBlack változót, ami azt tárolja, hogy a gomb jelenleg fekete színű-e.
-6. A Button_Click metódus-ban meg kell állapítani, hogy melyik gombon történt a kattintás, ezt az object típusú sender paraméter tartalmazza. Tehát megszerezzük a sender-ből a Buttont. 
+6. Felveszünk az osztályban egy isBlack változót, ami azt tárolja, hogy a gomb jelenleg fekete színű-e.
+7. A Button_Click metódus-ban meg kell állapítani, hogy melyik gombon történt a kattintás, ezt az object típusú sender paraméter tartalmazza. Tehát megszerezzük a sender-ből a Buttont. 
 Button button = sender as Button. (ehelyett a Button button = (Button) sender is jó lenne)
-7. Ha sikerül Button típusként azonosítani a sender-t, akkor a button.Background tulajdonsággal beállítjuk a Button háttérszínét, úgy, hogy az isBlack változó értékét megfordítjuk.
+8. Ha sikerül Button típusként azonosítani a sender-t, akkor a button.Background tulajdonsággal beállítjuk a Button háttérszínét, és az isBlack változó értékét megfordítjuk.
 
 ```c#
 using System.Windows;
