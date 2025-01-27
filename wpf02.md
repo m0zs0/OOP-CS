@@ -102,3 +102,97 @@ namespace Wpf_1_TetrisDesigner1
     }
 }
 ```
+## Feladat2
+Biztosítsuk, hogy a felhasználók elmenthessék és később betölthessék a saját Tetris formájukat.
+
+Ehhez vegyünk fel egy tömböt: 
+
+```c#
+private int[,] tetrisForm = new int[3, 3];
+```
+
+A gomb lenyomásakor a tömbbeli értéket is átállítjuk:
+```c#
+
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    // button létezik
+    int row = Grid.GetRow(button);
+    int column = Grid.GetColumn(button);
+    tetrisForm[row, column] = isBlack ? 1 : 0;
+    // ...
+}```
+
+Mentés fájlba:
+```c#
+private void SaveButton_Click(object sender, RoutedEventArgs e)
+{
+    using (StreamWriter writer = new StreamWriter("tetrisDesign1.txt"))
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                writer.Write(tetrisForm[i, j]);
+            }
+            writer.WriteLine();
+        }
+    }
+}
+```
+
+Betöltés fájlból:
+
+```c#
+private void LoadButton_Click(object sender, RoutedEventArgs e)
+{
+    using (StreamReader reader = new StreamReader("tetrisDesign1.txt"))
+    {
+        string line;
+        int row = 0;
+        while ((line = reader.ReadLine()) != null)
+        {
+            for (int column = 0; column < 3; column++)
+            {
+                tetrisForm[row, column] = int.Parse(line[column].ToString());
+                // Frissítsd a megfelelő gomb színét a tömb értéke alapján
+            }
+            row++;
+        }
+    }
+}
+
+
+```
+
+De hogyan érjük el az adott gombot?
+Minden UI elemnek, így a Button-nak is van egy Tag tulajdonsága. Ez egy általános célú tulajdonság, amelybe bármilyen típusú objektumot eltárolhatunk. Gyakran használják további adatok társítására az elemhez, amelyek nem közvetlenül a megjelenítéshez kapcsolódnak.
+
+Amikor létrehozzuk a gombokat, állítsuk be a Tag tulajdonságukat egy olyan objektumra, amely tartalmazza a szükséges információkat, például a sor és oszlop indexet.
+Például létrehozhatunk egy egyszerű osztályt:
+
+```c#
+public class ButtonData
+{
+    public int Row { get; set; }
+    public int Column { get; set; }
+}
+```
+
+A gomb létrehozásakor:
+```c#
+Button button = new Button();
+button.Tag = new ButtonData { Row = row, Column = column };
+```
+
+A Click eseményben:
+```c#
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    Button button = (Button)sender;
+    ButtonData buttonData = (ButtonData)button.Tag;
+    int row = buttonData.Row;
+    int column = buttonData.Column;
+    // ...
+}
+```
