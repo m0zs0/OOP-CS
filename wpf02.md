@@ -274,59 +274,7 @@ private Button GetButton(int row, int column)
 ```
 </details>
 
-<details>
-<summary>Nyiss le az xaml forrásáért!</summary>
 
-### `MainWindows.xaml` példa:
-```c#
-<Window x:Class="Wpf_1_TetrisDesigner1.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="600" Width="600">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-
-        <!-- DesignerGrid a tervező gombokhoz -->
-        <Grid x:Name="DesignerGrid" Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Button x:Name="Button00" Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
-            <Button x:Name="Button01" Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
-            <Button x:Name="Button02" Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
-            <Button x:Name="Button10" Grid.Column="0" Grid.Row="1" Click="Button_Click"/>
-            <Button x:Name="Button11" Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
-            <Button x:Name="Button12" Grid.Column="2" Grid.Row="1" Click="Button_Click"/>
-            <Button x:Name="Button20" Grid.Column="0" Grid.Row="2" Click="Button_Click"/>
-            <Button x:Name="Button21" Grid.Column="1" Grid.Row="2" Click="Button_Click"/>
-            <Button x:Name="Button22" Grid.Column="2" Grid.Row="2" Click="Button_Click"/>
-        </Grid>
-
-        <!-- Grid a mentés és betöltés gombokhoz -->
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="ButtonLoad" Content="Load" Grid.Column="0" Click="LoadButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
-            <Button x:Name="ButtonSave" Content="Save" Grid.Column="1" Click="SaveButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
-        </Grid>
-    </Grid>
-</Window>   
-
-```
-</details>
 <details>
 <summary>Nyiss le az xaml.cs forrásáért!</summary>
 
