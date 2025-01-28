@@ -203,7 +203,7 @@ De hogyan érjük el az adott gombot?
 
 Egy gombot keresünk a DesignerGrid nevű Grid vezérlőben, amely a megadott sorban (row) és oszlopban (column) található. 
 
-`DesignerGrid.Children`: Ez a DesignerGrid nevű Grid vezérlő összes gyermek elemét adja vissza, amelyek UIElement típusúak.
+`DesignerGrid.Children`: Ez a DesignerGrid nevű Grid vezérlő összes gyermek elemét adja vissza egy UIElementCollection típusba.
 
 `.Cast<UIElement>()`: Ez a metódus az összes gyermek elemet UIElement típusúvá alakítja, hogy LINQ lekérdezéseket lehessen használni rajtuk.
 
