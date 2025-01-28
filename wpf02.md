@@ -19,7 +19,7 @@ Működés: Minden Button-ra kattintáskor színváltás alapszín és fekete k�
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="600" Width="600">
-    <Grid>
+    <Grid x:Name="DesignerGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
