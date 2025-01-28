@@ -218,5 +218,202 @@ private Button GetButton(int row, int column)
 }
 ```
 
+<details>
+<summary>Nyiss le az xaml forrásáért!</summary>
 
+### `MainWindows.xaml` példa:
+```c#
+<Window x:Class="Wpf_1_TetrisDesigner1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- DesignerGrid a tervező gombokhoz -->
+        <Grid x:Name="DesignerGrid" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="Button00" Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
+            <Button x:Name="Button01" Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
+            <Button x:Name="Button02" Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
+            <Button x:Name="Button10" Grid.Column="0" Grid.Row="1" Click="Button_Click"/>
+            <Button x:Name="Button11" Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
+            <Button x:Name="Button12" Grid.Column="2" Grid.Row="1" Click="Button_Click"/>
+            <Button x:Name="Button20" Grid.Column="0" Grid.Row="2" Click="Button_Click"/>
+            <Button x:Name="Button21" Grid.Column="1" Grid.Row="2" Click="Button_Click"/>
+            <Button x:Name="Button22" Grid.Column="2" Grid.Row="2" Click="Button_Click"/>
+        </Grid>
+
+        <!-- Grid a mentés és betöltés gombokhoz -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonLoad" Content="Load" Grid.Column="0" Click="LoadButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
+            <Button x:Name="ButtonSave" Content="Save" Grid.Column="1" Click="SaveButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
+        </Grid>
+    </Grid>
+</Window>   
+
+```
+</details>
+
+<details>
+<summary>Nyiss le az xaml forrásáért!</summary>
+
+### `MainWindows.xaml` példa:
+```c#
+<Window x:Class="Wpf_1_TetrisDesigner1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- DesignerGrid a tervező gombokhoz -->
+        <Grid x:Name="DesignerGrid" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="Button00" Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
+            <Button x:Name="Button01" Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
+            <Button x:Name="Button02" Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
+            <Button x:Name="Button10" Grid.Column="0" Grid.Row="1" Click="Button_Click"/>
+            <Button x:Name="Button11" Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
+            <Button x:Name="Button12" Grid.Column="2" Grid.Row="1" Click="Button_Click"/>
+            <Button x:Name="Button20" Grid.Column="0" Grid.Row="2" Click="Button_Click"/>
+            <Button x:Name="Button21" Grid.Column="1" Grid.Row="2" Click="Button_Click"/>
+            <Button x:Name="Button22" Grid.Column="2" Grid.Row="2" Click="Button_Click"/>
+        </Grid>
+
+        <!-- Grid a mentés és betöltés gombokhoz -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonLoad" Content="Load" Grid.Column="0" Click="LoadButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
+            <Button x:Name="ButtonSave" Content="Save" Grid.Column="1" Click="SaveButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
+        </Grid>
+    </Grid>
+</Window>   
+
+```
+</details>
+<details>
+<summary>Nyiss le az xaml.cs forrásáért!</summary>
+
+### `MainWindows.xaml.cs` példa:
+```c#
+using System.IO;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Wpf_1_TetrisDesigner1
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        private int[,] tetrisForm = new int[3, 3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
+        
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (StreamWriter sw = new StreamWriter("tetrisDesign1.txt"))
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        sw.Write(tetrisForm[i, j]);
+                    }
+                    sw.WriteLine();
+                }
+            }
+            MessageBox.Show("Mentve :)");
+        }
+
+        private bool isBlack(Button button) { 
+            return button.Background == Brushes.Black;
+        }
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button) { 
+                button.Background = isBlack(button) ? Brushes.LightGray : Brushes.Black;
+                int row = Grid.GetRow(button);
+                int column = Grid.GetColumn(button);
+                tetrisForm[row, column] = isBlack(button) ? 1 : 0;
+            }
+            
+        }
+
+        private Button GetButton(int row, int column)
+        {
+            return (Button)DesignerGrid.Children
+                .Cast<UIElement>()
+                .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == column);
+        }
+
+        private void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (StreamReader sr = new StreamReader("tetrisDesign1.txt"))
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    string sor = sr.ReadLine();
+                    for (int j = 0; j < 3; j++)
+                    {
+                        tetrisForm[i, j] = int.Parse(sor[j].ToString());
+                        Button button = GetButton(i, j);
+                        button.Background = tetrisForm[i, j] == 1 ? Brushes.Black : Brushes.LightGray;
+                    }
+                }
+            }
+            MessageBox.Show("Betöltve :)");
+        }
+    }
+}
+
+```
+</details>
 
