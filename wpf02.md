@@ -92,12 +92,14 @@ namespace Wpf_1_TetrisDesigner1
             InitializeComponent();
         }
 
+	private bool isBlack(Button button) { 
+	    return button.Background == Brushes.Black;
+	}
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button;
-	    if (button != null){
-                button.Background = isBlack ? Brushes.LightGray : Brushes.Black;
-                isBlack = !isBlack;
+            if (sender is Button button){
+                button.Background = isBlack(button) ? Brushes.LightGray : Brushes.Black;
         }
     }
 }
@@ -105,10 +107,10 @@ namespace Wpf_1_TetrisDesigner1
 ## Feladat2
 Biztosítsuk, hogy a felhasználók elmenthessék és később betölthessék a saját Tetris formájukat.
 
-Ehhez vegyünk fel egy tömböt: 
+Ehhez vegyünk fel egy tömböt, amit egyből nullákkal fel is töltünk. 0: nincs színezve (!= fekete), 1: színezve van (==fekete): 
 
 ```c#
-private int[,] tetrisForm = new int[3, 3];
+private int[,] tetrisForm = new int[3, 3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
 ```
 
 A gomb lenyomásakor a tömbbeli értéket is átállítjuk:
