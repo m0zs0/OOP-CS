@@ -105,7 +105,8 @@ namespace Wpf_1_TetrisDesigner1
 ## Feladat2
 Biztosítsuk, hogy a felhasználók elmenthessék és később betölthessék a saját Tetris formájukat.
 
-A UI áttervezése:
+9. **A UI áttervezése**
+
 Az eredeti `DesignerGrid` Drid-ünket egy nagyobb Gridbe foglaljuk, úgy hogy a nagy Grid-nek 2 sora van, amiből a 0. sorban a tervezőgombok, az 1. sorban a Load és a Save gombok vannak:
 
 ```c#
@@ -131,6 +132,7 @@ Az eredeti `DesignerGrid` Drid-ünket egy nagyobb Gridbe foglaljuk, úgy hogy a 
 </Grid>
 ```
 
+10. **Eseménykezelők módosítása**
 
 Majd vegyünk fel egy tömböt, amit egyből nullákkal fel is töltünk. 0: nincs színezve (!= fekete), 1: színezve van (==fekete): 
 
