@@ -367,3 +367,169 @@ namespace Wpf_1_TetrisDesigner1
 ```
 </details>
 
+Mostmár csak annyi a probléma, hogy alapértelmezésben, ha megállunk egy gomb felett, akkor a háttérszín helyett a template hover-ében beállított színnel lefedi a hátteret.
+
+1. megoldás Módosíthatjuk a gombok stílusát úgy, hogy ne változzon a háttérszínük, amikor az egér föléjük kerül. Ezt megtehetjük egy egyedi stílus létrehozásával a XAML-ben.
+2. megoldás: Ne Buttont használjunk hanem pl Rectangle vezérlőt. 
+
+Ugyanebben a Solution-ban adjunk hozzá egy új projektet `Wpf_1_TetrisDesigner2` néven. Majd minden DesignerGrid-ben lévő gomb helyett egy-egy Rectangle vezérlőt tegyünk be. Arra is figyeljünk, hogy ennek a MouseDown() eseményére kell feliratkoznunk. 
+
+
+<details>
+<summary>Nyiss le az xaml forrásáért!</summary>
+
+### `MainWindows.xaml` példa:
+```c#
+<Window x:Class="Wpf_1_TetrisDesigner2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- GameGrid a játék elemekhez -->
+        <Grid x:Name="DesignerGrid" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Rectangle x:Name="Rect00" Grid.Column="0" Grid.Row="0" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+            <Rectangle x:Name="Rect01" Grid.Column="1" Grid.Row="0" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+            <Rectangle x:Name="Rect02" Grid.Column="2" Grid.Row="0" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+            <Rectangle x:Name="Rect10" Grid.Column="0" Grid.Row="1" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+            <Rectangle x:Name="Rect11" Grid.Column="1" Grid.Row="1" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+            <Rectangle x:Name="Rect12" Grid.Column="2" Grid.Row="1" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+            <Rectangle x:Name="Rect20" Grid.Column="0" Grid.Row="2" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+            <Rectangle x:Name="Rect21" Grid.Column="1" Grid.Row="2" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+            <Rectangle x:Name="Rect22" Grid.Column="2" Grid.Row="2" Fill="LightGray" MouseDown="Rectangle_MouseDown"/>
+        </Grid>
+
+        <!-- Grid a mentés és betöltés gombokhoz -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonLoad" Content="Load" Grid.Column="0" Click="LoadButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
+            <Button x:Name="ButtonSave" Content="Save" Grid.Column="1" Click="SaveButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
+        </Grid>
+    </Grid>
+</Window>
+ 
+
+```
+</details>
+
+
+<details>
+<summary>Nyiss le az xaml.cs forrásáért!</summary>
+
+### `MainWindows.xaml.cs` példa:
+```c#
+using System.IO;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Wpf_1_TetrisDesigner2
+{
+    public partial class MainWindow : Window
+    {
+        private int[,] tetrisForm = new int[3, 3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (StreamWriter sw = new StreamWriter("tetrisDesign1.txt"))
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        sw.Write(tetrisForm[i, j]);
+                    }
+                    sw.WriteLine();
+                }
+            }
+            MessageBox.Show("Mentve :)");
+        }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Rectangle rect)
+            {
+                int row = Grid.GetRow(rect);
+                int column = Grid.GetColumn(rect);
+                if (rect.Fill == Brushes.Black)
+                {
+                    rect.Fill = Brushes.LightGray;
+                    tetrisForm[row, column] = 0;
+                }
+                else
+                {
+                    rect.Fill = Brushes.Black;
+                    tetrisForm[row, column] = 1;
+                }
+            }
+        }
+
+        private void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader("tetrisDesign1.txt"))
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        string line = sr.ReadLine();
+                        for (int j = 0; j < 3; j++)
+                        {
+                            tetrisForm[i, j] = int.Parse(line[j].ToString());
+                            Rectangle rect = GetRectangle(i, j);
+                            rect.Fill = tetrisForm[i, j] == 1 ? Brushes.Black : Brushes.LightGray;
+                        }
+                    }
+                }
+                MessageBox.Show("Betöltve :)");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hiba történt a betöltés során: {ex.Message}");
+            }
+        }
+
+        private Rectangle GetRectangle(int row, int column)
+        {
+            return DesignerGrid.Children
+                .OfType<Rectangle>()
+                .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == column);
+        }
+    }
+}
+
+```
+</details>
+
+
+
