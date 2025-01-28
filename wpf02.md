@@ -85,8 +85,6 @@ namespace Wpf_1_TetrisDesigner1
 
     public partial class MainWindow : Window
     {
-        private bool isBlack = false;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -107,7 +105,34 @@ namespace Wpf_1_TetrisDesigner1
 ## Feladat2
 Biztosítsuk, hogy a felhasználók elmenthessék és később betölthessék a saját Tetris formájukat.
 
-Ehhez vegyünk fel egy tömböt, amit egyből nullákkal fel is töltünk. 0: nincs színezve (!= fekete), 1: színezve van (==fekete): 
+A UI áttervezése:
+Az eredeti `DesignerGrid` Drid-ünket egy nagyobb Gridbe foglaljuk, úgy hogy a nagy Grid-nek 2 sora van, amiből a 0. sorban a tervezőgombok, az 1. sorban a Load és a Save gombok vannak:
+
+```c#
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <Grid x:Name="DesignerGrid" Grid.Row="0">
+        ...
+    </Grid>
+
+    <!-- Grid a mentés és betöltés gombokhoz -->
+    <Grid Grid.Row="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ButtonLoad" Content="Load" Grid.Column="0" Click="LoadButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
+        <Button x:Name="ButtonSave" Content="Save" Grid.Column="1" Click="SaveButton_Click" HorizontalAlignment="Center" Width="90" Height="54" Margin="10"/>
+    </Grid>
+</Grid>
+```
+
+
+Majd vegyünk fel egy tömböt, amit egyből nullákkal fel is töltünk. 0: nincs színezve (!= fekete), 1: színezve van (==fekete): 
 
 ```c#
 private int[,] tetrisForm = new int[3, 3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
@@ -121,80 +146,77 @@ private void Button_Click(object sender, RoutedEventArgs e)
     // button létezik
     int row = Grid.GetRow(button);
     int column = Grid.GetColumn(button);
-    tetrisForm[row, column] = isBlack ? 1 : 0;
+    tetrisForm[row, column] = isBlack(button) ? 1 : 0;
     // ...
-}```
+}
+```
 
 Mentés fájlba:
+
+A tömböt kiírjuk egy egyzerű text fájlba:
+
 ```c#
 private void SaveButton_Click(object sender, RoutedEventArgs e)
 {
-    using (StreamWriter writer = new StreamWriter("tetrisDesign1.txt"))
+    using (StreamWriter sw = new StreamWriter("tetrisDesign1.txt"))
     {
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
             {
-                writer.Write(tetrisForm[i, j]);
+                sw.Write(tetrisForm[i, j]);
             }
-            writer.WriteLine();
+            sw.WriteLine();
         }
     }
+    MessageBox.Show("Mentve :)");
 }
 ```
 
 Betöltés fájlból:
 
+Beolvassuk a fájl tartalmát egy tömbbe, majd hozzárendeljük a mátrix indexek alapján a Grid cellákat és beállítjuk a színt:
+
 ```c#
 private void LoadButton_Click(object sender, RoutedEventArgs e)
 {
-    using (StreamReader reader = new StreamReader("tetrisDesign1.txt"))
+    using (StreamReader sr = new StreamReader("tetrisDesign1.txt"))
     {
-        string line;
-        int row = 0;
-        while ((line = reader.ReadLine()) != null)
+        for (int i = 0; i < 3; i++)
         {
-            for (int column = 0; column < 3; column++)
+            string sor = sr.ReadLine();
+            for (int j = 0; j < 3; j++)
             {
-                tetrisForm[row, column] = int.Parse(line[column].ToString());
-                // Frissítsd a megfelelő gomb színét a tömb értéke alapján
+                tetrisForm[i, j] = int.Parse(sor[j].ToString());
+                Button button = GetButton(i, j);
+                button.Background = tetrisForm[i, j] == 1 ? Brushes.Black : Brushes.LightGray;
             }
-            row++;
         }
     }
+    MessageBox.Show("Betöltve :)");
 }
-
-
 ```
 
 De hogyan érjük el az adott gombot?
-Minden UI elemnek, így a Button-nak is van egy Tag tulajdonsága. Ez egy általános célú tulajdonság, amelybe bármilyen típusú objektumot eltárolhatunk. Gyakran használják további adatok társítására az elemhez, amelyek nem közvetlenül a megjelenítéshez kapcsolódnak.
 
-Amikor létrehozzuk a gombokat, állítsuk be a Tag tulajdonságukat egy olyan objektumra, amely tartalmazza a szükséges információkat, például a sor és oszlop indexet.
-Például létrehozhatunk egy egyszerű osztályt:
+Egy gombot keresünk a DesignerGrid nevű Grid vezérlőben, amely a megadott sorban (row) és oszlopban (column) található. 
+
+`DesignerGrid.Children`: Ez a DesignerGrid nevű Grid vezérlő összes gyermek elemét adja vissza, amelyek UIElement típusúak.
+
+`.Cast<UIElement>()`: Ez a metódus az összes gyermek elemet UIElement típusúvá alakítja, hogy LINQ lekérdezéseket lehessen használni rajtuk.
+
+`.First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == column)`: Ez a LINQ lekérdezés az első olyan elemet keresi, amelynek a sor- és oszlopindexe megegyezik a megadott row és column értékekkel. A Grid.GetRow(e) és Grid.GetColumn(e) metódusok segítségével lekérdezzük az elem sor- és oszlopindexét.
+
+`(Button)`: Végül az eredményt Button típusúvá alakítjuk, mivel biztosak vagyunk benne, hogy a keresett elem egy gomb.
 
 ```c#
-public class ButtonData
+private Button GetButton(int row, int column)
 {
-    public int Row { get; set; }
-    public int Column { get; set; }
+    return (Button)DesignerGrid.Children
+        .Cast<UIElement>()
+        .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == column);
 }
 ```
 
-A gomb létrehozásakor:
-```c#
-Button button = new Button();
-button.Tag = new ButtonData { Row = row, Column = column };
-```
 
-A Click eseményben:
-```c#
-private void Button_Click(object sender, RoutedEventArgs e)
-{
-    Button button = (Button)sender;
-    ButtonData buttonData = (ButtonData)button.Tag;
-    int row = buttonData.Row;
-    int column = buttonData.Column;
-    // ...
-}
-```
+
