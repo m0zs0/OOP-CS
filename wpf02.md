@@ -367,6 +367,9 @@ namespace Wpf_1_TetrisDesigner1
 ```
 </details>
 
+
+## Patch
+
 Mostmár csak annyi a probléma, hogy alapértelmezésben, ha megállunk egy gomb felett, akkor a háttérszín helyett a template hover-ében beállított színnel lefedi a hátteret.
 
 1. megoldás Módosíthatjuk a gombok stílusát úgy, hogy ne változzon a háttérszínük, amikor az egér föléjük kerül. Ezt megtehetjük egy egyedi stílus létrehozásával a XAML-ben.
