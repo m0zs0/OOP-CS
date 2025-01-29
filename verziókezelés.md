@@ -8,7 +8,7 @@
 5. A megjelenő ablakban válaszd ki azt a mappát, amelyet szinkronizálni szeretnél a felhővel C:\?\repos. 
 
 
-##Új, verziókezelt projekt létrehozása
+## Új, verziókezelt projekt létrehozása
 0. Megjegyzés: Ha így használod a VS2022 Community-t, akkor nem feltétlen kell bejelentkezni a VS2022-be
 1. Create a new project
 2. Válaszd ki a kívánt projekt típusát (pl. Console App, WPF App stb.), majd kattints a Next gombra.
