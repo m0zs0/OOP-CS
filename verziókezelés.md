@@ -10,13 +10,19 @@
 
 ## Új, verziókezelt projekt létrehozása
 0. Megjegyzés: Ha így használod a VS2022 Community-t, akkor nem feltétlen kell bejelentkezni a VS2022-be
+```console
 1. Create a new project
+```
 2. Válaszd ki a kívánt projekt típusát (pl. Console App, WPF App stb.), majd kattints a Next gombra.
 3. A Configure your new project ablakban, a Location mezőben válaszd ki a kívánt könyvtárat, ahol a projektet létre szeretnéd hozni. 
 4. Add meg a projekt nevét és egyéb szükséges adatokat, majd kattints a Create gombra.
+```console
 5. A Solution Explorer ablakban kattints jobb gombbal a Solution-ra, majd válaszd a Create Git Repository lehetőséget.
+```
 6. Győződj meg róla, hogy a projekt mappáját választod ki a repozitórium helyeként, majd kattints a Create gombra.
+```console
 7. Ezután a Git Changes ablakban láthatod a módosított fájlokat
+```
 8. Írj egy Commit Message-et, majd Commit All gombra, hogy a változtatásokat elmentsd a helyi repozitóriumba.
 9. Az "Amend" pipa: lehetővé teszi, hogy módosítsd az utolsó commit-ot anélkül, hogy új commit-ot hoznál létre. Ez különösen akkor hasznos, ha elfelejtettél valamit hozzáadni az utolsó commit-hoz, vagy ha javítani szeretnél egy hibát az utolsó commit üzenetében.
 
