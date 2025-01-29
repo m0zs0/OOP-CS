@@ -121,7 +121,7 @@ Az eredeti `DesignerGrid` Drid-ünket egy nagyobb Gridbe foglaljuk, úgy hogy a 
     </Grid>
 
     <!-- Grid a mentés és betöltés gombokhoz -->
-    <Grid Grid.Row="1">
+    <Grid x:Name="MenuGrid" Grid.Row="1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
