@@ -23,7 +23,7 @@
 ```console
 7. Ezután a Git Changes ablakban láthatod a módosított fájlokat
 ```
-8. Írj egy Commit Message-et, majd Commit All gombra, hogy a változtatásokat elmentsd a helyi repozitóriumba.
+8. Írj egy Commit Message-et, majd Commit All gombra, hogy a változtatásokat elmentsd a helyi repozitóriumba. Innen a OneDrive automatikusan feltölti a fájlokat a felhőbe.
 9. Az "Amend" pipa: lehetővé teszi, hogy módosítsd az utolsó commit-ot anélkül, hogy új commit-ot hoznál létre. Ez különösen akkor hasznos, ha elfelejtettél valamit hozzáadni az utolsó commit-hoz, vagy ha javítani szeretnél egy hibát az utolsó commit üzenetében.
 
 10. Új branch létrehozása: A Git Changes ablakban kattints a New Branch gombra. Add meg az új branch nevét, majd kattints a Create Branch gombra.
