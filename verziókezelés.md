@@ -1,7 +1,15 @@
-## Új, verziókezelt projekt létrehozása
+# Visual Studio 2022 verziókezelt projektek szinkronizálása OneDrive-on keresztül
 
-0. 
+## OneDrive alkalmazás beállítása:
+1. Kattints a OneDrive ikonra a tálcán (jobb alsó sarokban).
+2. Lépj be az otthoni Windows-os accountoddal 
+3. Válaszd a Beállítások lehetőséget.
+4. Az Fiók fülön kattints a Mappák kiválasztása gombra.
+5. A megjelenő ablakban válaszd ki azt a mappát, amelyet szinkronizálni szeretnél a felhővel C:\?\repos. 
 
+
+##Új, verziókezelt projekt létrehozása
+0. Megjegyzés: Ha így használod a VS2022 Community-t, akkor nem feltétlen kell bejelentkezni a VS2022-be
 1. Create a new project
 2. Válaszd ki a kívánt projekt típusát (pl. Console App, WPF App stb.), majd kattints a Next gombra.
 3. A Configure your new project ablakban, a Location mezőben válaszd ki a kívánt könyvtárat, ahol a projektet létre szeretnéd hozni. 
