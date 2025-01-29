@@ -1,8 +1,8 @@
 # Visual Studio 2022 verziókezelt projektek szinkronizálása OneDrive-on keresztül
 
-## OneDrive alkalmazás beállítása:
+## OneDrive alkalmazás beállítása
 1. Kattints a OneDrive ikonra a tálcán (jobb alsó sarokban).
-2. Lépj be az otthoni Windows-os accountoddal 
+2. Lépj be az otthoni Windows-os accountoddal. 
 3. Válaszd a Beállítások lehetőséget.
 4. Az Fiók fülön kattints a Mappák kiválasztása gombra.
 5. A megjelenő ablakban válaszd ki azt a mappát, amelyet szinkronizálni szeretnél a felhővel C:\?\repos. 
