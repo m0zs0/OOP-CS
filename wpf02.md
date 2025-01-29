@@ -1,4 +1,4 @@
-# Grid: TetrisDesigner v1
+# Grid: TetrisShapeDesigner
 
 ## Feladat:
 
