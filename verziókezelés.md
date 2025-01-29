@@ -5,7 +5,7 @@
 2. Lépj be az otthoni Windows-os accountoddal. 
 3. Válaszd a Beállítások lehetőséget.
 4. Az Fiók fülön kattints a Mappák kiválasztása gombra.
-5. A megjelenő ablakban válaszd ki azt a mappát, amelyet szinkronizálni szeretnél a felhővel C:\?\repos. 
+5. A megjelenő ablakban válaszd ki azt a mappát, amelyet szinkronizálni szeretnél a felhővel (pl.: C:\Users\<felhasználónév>\OneDrive\repos). 
 
 
 ## Új, verziókezelt projekt létrehozása
