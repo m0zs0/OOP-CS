@@ -11,7 +11,7 @@
 ## Új, verziókezelt projekt létrehozása
 0. Megjegyzés: Ha így használod a VS2022 Community-t, akkor nem feltétlen kell bejelentkezni a VS2022-be
 ```console
-1. Create a new project
+1. Create New Project
 ```
 2. Válaszd ki a kívánt projekt típusát (pl. Console App, WPF App stb.), majd kattints a Next gombra.
 3. A Configure your new project ablakban, a Location mezőben válaszd ki a kívánt könyvtárat, ahol a projektet létre szeretnéd hozni. 
