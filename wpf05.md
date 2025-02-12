@@ -1,4 +1,7 @@
 c# wpf akasztófa játék: 
+
+![KPO feladat megoldása](PICTURES/OOP_2_KPO_Solution.PNG)
+
 4 játékrész van:
 
 bal felül a feladvány az "Akasztófa" címmel
