@@ -44,3 +44,11 @@ kép betöltés
 ```
 HangmanImage.Source = new BitmapImage(new Uri($"Images/akasztofa{errorCounter}.png", UriKind.Relative));
 ```
+
+Ennek használatához a fájlokat hozzá kell adni a projekthez:
+
+Solution Explorer/Projekt/Add Folder: Images
+
+Images/Add Existing Item...: összes képfájl kijelölése és Add
+
+Solution Explorer/Images/képfájlok/Properties/Build Action: Content és Copy to Output Directory: Copy if newer vagy Copy always
