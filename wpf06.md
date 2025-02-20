@@ -1,5 +1,6 @@
 # WORD 1.0
 
+![WORD 1.0](PICTURES/Wpf_1_WORD1_0.png)
 
 NumericUpDown telepítése:
 
