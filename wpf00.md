@@ -149,23 +149,66 @@ namespace Wpf_1_Word1
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                DefaultExt = ".xml",
+                Filter = "XML files (*.xml)|*.xml"
+            };
             if (saveFileDialog.ShowDialog() == true)
             {
-                File.WriteAllText(saveFileDialog.FileName, TextTextBox.Text);
+                string xmlContent = "<document>\n" +
+                                    "<identifier>mozso_xml</identifier>\n" +
+                                    $"<text>{TextTextBox.Text}</text>\n" +
+                                    $"<fontfamily>{TextTextBox.FontFamily}</fontfamily>\n" +
+                                    $"<fontsize>{TextTextBox.FontSize}</fontsize>\n" +
+                                    $"<fontweight>{TextTextBox.FontWeight}</fontweight>\n" +
+                                    $"<fontstyle>{TextTextBox.FontStyle}</fontstyle>\n" +
+                                    $"<textdecorations>{(TextTextBox.TextDecorations == TextDecorations.Underline ? "Underline" : "None")}</textdecorations>\n" +
+                                    $"<foreground>{TextTextBox.Foreground}</foreground>\n" +
+                                    $"<background>{TextTextBox.Background}</background>\n" +
+                                    "</document>";
+        
+                string fileName = saveFileDialog.FileName.Split('.')[0];
+                if (!fileName.EndsWith(".xml"))
+                {
+                    fileName += ".xml";
+                }
+                File.WriteAllText(fileName, xmlContent);
                 MessageBox.Show("A mentés megtörtént.");
             }
-                
+        
         }
-
+        
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                DefaultExt = ".xml",
+                Filter = "XML files (*.xml)|*.xml"
+            };
             if (openFileDialog.ShowDialog() == true)
             {
-                TextTextBox.Text = File.ReadAllText(openFileDialog.FileName);
+                string xmlContent = File.ReadAllText(openFileDialog.FileName);
+                var xmlDoc = new System.Xml.XmlDocument();
+                xmlDoc.LoadXml(xmlContent);
+        
+                var identifierNode = xmlDoc.SelectSingleNode("/document/identifier");
+                if (identifierNode == null || identifierNode.InnerText != "mozso_xml")
+                {
+                    MessageBox.Show("Hibás fájlformátum.");
+                    return;
+                }
+        
+                TextTextBox.Text = xmlDoc.SelectSingleNode("/document/text").InnerText;
+                TextTextBox.FontFamily = new FontFamily(xmlDoc.SelectSingleNode("/document/fontfamily").InnerText);
+                TextTextBox.FontSize = double.Parse(xmlDoc.SelectSingleNode("/document/fontsize").InnerText);
+                TextTextBox.FontWeight = (FontWeight)new FontWeightConverter().ConvertFromString(xmlDoc.SelectSingleNode("/document/fontweight").InnerText);
+                TextTextBox.FontStyle = (FontStyle)new FontStyleConverter().ConvertFromString(xmlDoc.SelectSingleNode("/document/fontstyle").InnerText);
+                TextTextBox.TextDecorations = xmlDoc.SelectSingleNode("/document/textdecorations").InnerText == "Underline" ? TextDecorations.Underline : null;
+                TextTextBox.Foreground = (Brush)new BrushConverter().ConvertFromString(xmlDoc.SelectSingleNode("/document/foreground").InnerText);
+                TextTextBox.Background = (Brush)new BrushConverter().ConvertFromString(xmlDoc.SelectSingleNode("/document/background").InnerText);
             }
-                
+        
         }
     }
 }
