@@ -56,3 +56,59 @@ private void FontSize_ValueChanged(object sender, ControlLib.ValueChangedEventAr
     }
 }
 ```
+
+(**) Biztosítsuk, hogy a szöveg mellett a formázási információk is mentésre kerüljenek és visszatöltődjenek.
+
+Ehhez ötlet:
+
+Az XmlDocument osztály az XML dokumentumok kezelésére szolgál a .NET keretrendszerben. Lehetővé teszi az XML dokumentumok betöltését, módosítását és mentését. Íme néhány fontosabb részlet róla:
+
+Betöltés: Az XmlDocument osztály segítségével könnyedén betölthetsz egy XML fájlt. Ehhez használhatod a Load metódust, amely betölti az XML tartalmát egy XmlDocument objektumba.
+```
+var xmlDoc = new System.Xml.XmlDocument();
+xmlDoc.Load("path/to/your/file.xml");
+```
+
+
+Navigálás: Az XmlDocument objektum lehetővé teszi az XML elemek és attribútumok elérését és módosítását. Például a SelectSingleNode metódussal kiválaszthatsz egy adott elemet XPath kifejezéssel.
+```
+var textNode = xmlDoc.SelectSingleNode("/document/text");
+string textContent = textNode.InnerText;
+```
+
+Módosítás: Az XmlDocument segítségével módosíthatod az XML tartalmát. Például beállíthatod egy elem szövegét vagy hozzáadhatsz új elemeket.
+
+```
+textNode.InnerText = "New Text Content";
+```
+
+Mentés: Az XmlDocument objektumot vissza is mentheted egy fájlba a Save metódussal.
+
+```
+xmlDoc.Save("path/to/your/file.xml");
+```
+
+
+(***)
+A fájl kiterjesztésével jelezzük, hogy XML dokumentumról van szó a SaveFileDialog beállításaival. Például, beállíthatod az alapértelmezett kiterjesztést és a szűrőt, hogy csak XML fájlokat lehessen menteni és betölteni.
+
+
+Ehhez használhatjuk az objektuminicializálót:
+
+```
+OpenFileDialog openFileDialog = new OpenFileDialog
+{
+    DefaultExt = ".xml",
+    Filter = "XML files (*.xml)|*.xml"
+};
+```
+
+Ez a szintaxis szintén egy új OpenFileDialog objektumot hoz létre az alapértelmezett konstruktor segítségével, de az objektum inicializáló szintaxist használja a tulajdonságok beállítására közvetlenül az objektum létrehozása után. Ez egy kényelmesebb és olvashatóbb módja az objektum tulajdonságainak beállítására.
+
+
+(****)
+A fájl mindig .xml kiterjesztéssel legyen mentve!
+
+
+(*****)
+Oldjuk meg, hogy csak a mi xml fájlunkat tudja megnyitni!
