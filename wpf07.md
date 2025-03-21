@@ -2,10 +2,10 @@
 
 ![coffemachine](PICTURES/WPF_1_coffee_machine.png)
 
-Feladat: Készítsünk egy kávéautomata szimulátort (Wpf_1_coffe_machine), amely lehetővé tesz 6 különböző kávéfajtából történő választást. 
--Az éremdobást szimuláljuk drag and drop technikával. 
--A jobb oldali állapotjelzőn -ha szükséges- jelenjen meg függőleges scrollbar, de 50-nél ne jelenítsünk meg benne több eseményt.
--Oldjuk meg, hogy a kávékészítés egyes fázisai is láthatók legyenek az Állapotjelzőn.
+**Feladat:** Készítsünk egy kávéautomata szimulátort (Wpf_1_coffe_machine), amely lehetővé tesz 6 különböző kávéfajtából történő választást. 
+- Az éremdobást szimuláljuk drag and drop technikával. 
+- A jobb oldali állapotjelzőn -ha szükséges- jelenjen meg függőleges scrollbar, de 50-nél ne jelenítsünk meg benne több eseményt.
+- Oldjuk meg, hogy a kávékészítés egyes fázisai is láthatók legyenek az Állapotjelzőn.
 
 [Letöltés: Wpf_1_coffee_machine.exe](https://github.com/m0zs0/OOP-CS/raw/main/EXE/Wpf_1_coffee_machine.exe)
 
